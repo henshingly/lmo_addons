@@ -1,0 +1,79 @@
+************************************************************
+Vereinsplan-Addon 1.3.0 für LMO 4.0.2
+************************************************************
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Aktuellste Subversion unter:
+http://lmo.svn.sourceforge.net/viewvc/lmo/lmo-addons/vereinsplan/
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Änderungen in Version 1.3.0: (Nobs)
++ Allgemein
+  + Version auf 1.3.0 gesetzt
+  + Unterstützung weiterer Konfigurations-Parameter zur Formatsteuerung,
+    z.B. Tabellen-Link, Team-Logo, lange, mittlere, kurze Team-Namen usw.
+  + Unterstützung vieler LMO-Ausgabe-Variablen für Template-Dateien
+  + neue Templates, Vorgänger-Templates nur z.T. kompatibel.
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Änderungen in Version 1.2.0: (Nobs)
++ Allgemein
+  + Version auf 1.2.0 gesetzt
+  + Anzeigesteuerung des Vereinsplan-Abschnitts im Liga-Ergebnis-Formular
+  + Abschnitt anzeigen nur für (Super-)Admins/Alle
+  + Vereinsplan beim Ergebnisspeichern erstellen/nicht erstellen
+  + Trennung zw. aktiver und zuletzt bearbeiteter Konfiguration
+  + aktive Konfiguration festlegen, die verwendet werden soll
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Änderungen in Version 1.1.2: (Nobs)
++ Allgemein
+  + Version auf 1.1.2 gesetzt
+  + Nummern (+7000) bei Textvariable angepasst
+  + Anzeige auch für Hilfsadmin
+  + Speichern nun voreingestellt
+  + diverse Endtags XHTML-sicher gestaltet
+  + Verwendet nun LMO4-PDF-Classlib, dadurch unabhängig von PDF-Addon
++ createvereinsplan_Sort
+  + Fehler doppelte Partien, auch für Heim- bzw. Auswärtsspiele angepasst
+  + fehlerhafte Abfrage "Vereinshalle" angepasst. (wenn leer gab's immer Warnung)
+  + doppelte Zeile entfernt
+  + Eindeutiger Monatsname auch bei statischer Ausgabe der Heim-, Auswärtsspiele
+  + fehlerhafte Wertzuordnung für PDF-Spaltenangabe Notiz beseitigt
+  + Warnung bei Schreibbefehl (PDF-Datei): Werte in doppelte Anführungszeichen gesetzt
+  + Absage-Logik geprüft und angepasst
++ lang-Deutsch.txt
+  + eindeutiger Nummernkreis 7000 für Textvariable gewählt
+  + u.a. Umlaute in lang-Deutsch.txt als HTML-fähige Zeichen gesetzt
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Änderungen in Version 1.1.1: (Torsten)
+ + Dateien Struktur LMO & Readme angepasst
+ + Short open
+ + Fehler doppelte Partien
+ + SVN Version
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Änderungen in Version 1.1.0:
+- Admin-Bereich
+  - KEINE Änderungen bei der Einbindung in die Oberfläche
+  - Liga-Liste nun sortierbar
+  - Angabe Liga-Verzeichnis integriert
+  - Spalte Liga auch als Icon anzeigbar
+  - PDF-Erstellung der Pläne integriert
+  - Slider beim Start alles öffnen/schliessen
+  - "alte" cfg-Konfigurationsdatei ist kombatibel
+- createvereinsplan_Sort
+  - "Datumsleere" Begegnungen werden mit Datum 11.11.1111 11:11
+    belegt
+  - Spielabbruch,- verlegung, -absage implementiert, noch Testphase
+  - Slider-Funktion alles öffen/schliessen integriert
+  - Slider-EventIds und KW-Namen wegen Eindeutigkeit erweitert
+- Javaskript
+  - neue Prüf-Funktionen für Werte im Admin-Bereich
+- Template, CSS, Bilder
+  - Zeilen mit "Hover" belegt
+  - Erweiterungen integriert
+  - zusätzliche Bild-Dateien hinzugefügt
+  - Output validiert (HTML und CSS)
+- Sonstiges
+  - Sprach-Datei erweitert
+  - Doku angepasst
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+

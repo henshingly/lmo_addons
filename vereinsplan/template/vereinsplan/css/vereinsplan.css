@@ -1,0 +1,137 @@
+
+  .result *	          {font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 11px;}
+  .result 		  {background-color:#B40000;}
+  .result a 	          {text-decoration: none; color: black;}
+  .result a:visited        {text-decoration: none; color: black;}
+  .result table 	          {background-color:#c0c0c0; color:black;}
+  .result h1 	          {font-size: 8px; color:black;}
+  .result .vRow 	          {white-space:nowrap; background-color:#FFFFE0; color:black;}
+
+  body                     {background-color:#FFFFFF; }
+
+  .Tab_Basis               { width:60%; background-color:#D0F0F0; border-style:outset; border-width:1px; padding:1px; margin:0px;}
+  .Tab_Kopf1               { width:100%; background-color:#000066; border-style:solid; border-width:1px; border-collapse:collapse; padding:2px;  margin:0px;}
+  .Tab_Plan_Menu           { width:100%; padding:1px; margin:0px; border-width:0px;}
+  .Tab_Slider_Menu         { width:100%; padding:1px; margin:0px; border-width:0px;}
+  .Tab_Inhalt0             { background-color:#D0F0F0; border-style:solid; border-width:1px; border-collapse:collapse; }
+  .Tab_Inhalt1             { width:100%; padding:1px; margin:1px; border-style:solid; border-width:1px; background-color:#D0F0F0; border-collapse:collapse; }
+  .Tab_Inhalt2             { width:100%; border-style:none;  border-width:0px; background-color:#D0F0F0; border-collapse:collapse; border-color:#808080; }
+  .Tab_Fuss                { padding:0px; margin:0px; width:100%; border-style:none;  border-width:0px; }
+  .Tab_Info                { width:600px; background-color:#FFFFFF; border-style:none; border-width:0px; margin:auto;}
+  .Tab_InfoInhalt          { width:100%;  background-color:#FFFFFF; border-collapse:collapse; border-style:none; border-width:1px; }
+
+  th.Kopf1_Zelle           { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9pt; font-weight:bold; background-color:#000066; color:#FFFF99; }
+  th.Kopf1_ZelleLinks      { width:50%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9pt; font-weight:bold; background-color:#000066; color:#FFFF99; text-align:center; }
+  th.Kopf1_ZelleRechts     { width:50%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9pt; font-weight:bold; background-color:#000066; color:#FFFF99; text-align:center; }
+
+  tr.BackColor1            { background-color:#D0F0F0;}
+  tr.BackColor1:hover      { background-color:#FFFF00;}
+  tr.BackColor2            { background-color:#ECECEC;}
+  tr.BackColor2:hover      { background-color:#FFFF00;}
+
+  td.Zelle_Basis           { width:100%;}
+  td.Zelle_Inhalt1         { width:100%;}
+  td.Kopf2_Rang            { font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U               { border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_Nr            { width:3%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_Wt            { width:4%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_Da            { width:7%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_Ze            { width:6%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_Url           { width:2%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_T             { width:25%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_TL            { width:31%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_TH            { width:24%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_TF            { width:15%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_Img           { width:2%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_Tr            { width:2%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_To            { width:7%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_TG            { width:15%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_L             { width:18%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_LI            { width:6%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_LN            { width:12%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_MN            { width:10%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_N             { width:5%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_No            { width:3%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_U_B             { width:2%; border-style:solid; border-width:0px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_OU              { border-style:solid; border-width:1px 0px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_OUL             { border-style:solid; border-width:1px 0px 1px 1px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.Kopf2_OUR             { border-style:solid; border-width:1px 1px 1px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003366; text-align: center; }
+  td.KreuzInfo             { background-color:#D0F0F0; border-style:none; border-width:0px; width:100%;  border-color:#808080; border-collapse:collapse; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:7pt; font-weight:normal; color:#000000; text-align:left; }
+  td.inhalt                { background-color:#D0F0F0; border-style:solid; border-width:1px; border-color:#808080; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center; }
+  td.fav                   { border-width:0px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:bold; color:#000000; text-align:center; }
+
+  td.xinhalt               { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  td.xinhalt_Nr            { width:3%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  td.xinhalt_Wt            { width:4%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  td.xinhalt_Da            { width:7%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  td.xinhalt_Ze            { width:6%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  td.xinhalt_Url           { width:2%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  td.xinhalt_T             { width:24%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  td.xinhalt_TH            { width:24%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  .xinhalt_TH a:visited    { text-decoration:underline; }
+  td.xinhalt_TG            { width:24%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  .xinhalt_TG a:visited    { text-decoration:underline; }
+  td.xinhalt_TF            { width:15%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  .xinhalt_TF a:visited    { text-decoration:underline; }
+  td.xinhalt_TL            { width:31%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  td.xinhalt_Img           { width:2%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  td.xinhalt_Tr            { width:2%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  td.xinhalt_Tr_r          { width:2%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:right;}
+  td.xinhalt_To            { width:7%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  td.xinhalt_L             { width:18%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  td.xinhalt_LI            { width:6%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  td.xinhalt_LN            { width:12%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  .xinhalt_LN a:visited    { text-decoration:underline; }
+  td.xinhalt_MN            { width:10%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  .xinhalt_MN a:visited    { text-decoration:underline; }
+  td.xinhalt_N             { width:5%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  .xinhalt_N a:visited     { text-decoration:underline; }
+  td.xinhalt_No            { width:3%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  td.xinhalt_B             { width:2%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center;  white-space:nowrap;}
+  td.sptzeile              { width:60%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center; border-style:solid; border-width:1px; border-color:#808080; }
+  td.kwzeile               { width:100%; height:1px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:0pt; font-weight:normal; color:#000000; text-align:center; border-top-style:dotted; border-width:thin; border-color:#808080; }
+  td.xfav                  { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:bold; color:#000000; text-align:center; }
+
+  td.akt                   { font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT:normal; FONT-SIZE:8pt; COLOR:#003366; text-align:center; }
+  .infoL                   { font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT:normal; FONT-SIZE:7pt; COLOR:#003366; text-align:left; }
+  .infoR                   { font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT:normal; FONT-SIZE:7pt; COLOR:#003366; text-align:right; }
+  .infoFL                  { font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT:bold; FONT-SIZE:8pt; background-color:#000066; COLOR:#FFFF99; text-align:center; }
+  .infoFR                  { font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT:bold; FONT-SIZE:8pt; background-color:#FF4C00; COLOR:#FFFF99; text-align:center; }
+  .fehler                  { font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT:bold; FONT-SIZE:9pt; background-color:#FF0000; COLOR:#FFFF99; text-align:center; }
+  .infoR a		  {color:blue; }
+  .infoR a:visited         {color:blue; text-decoration:none; }
+
+  td.fk1                   { border-style:solid; border-width:1px; border-color:#808080;font-family:Verdana, Arial, Helvetica, sans-serif; FONT-SIZE:7pt; COLOR:#000000; text-align:center; }
+  td.fkfav                 { font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT:bold; FONT-SIZE:7pt; background-color:#000066; COLOR:#FFFFFF; text-align:center; }
+  td.fkleer                { font-family:Verdana, Arial, Helvetica, sans-serif; background-color:#999999; FONT-WEIGHT:bold; FONT-SIZE:8pt; COLOR:#000000; text-align:center; }
+
+  td.headline              { font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT:bold; FONT-SIZE:10pt; text-align:center; }
+  td.topmenu               { width:34%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:right; }
+
+  td.seltext               { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center; }
+  td.chktext               { width:33%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center; }
+  .chktext a		  {color:blue; }
+  .chktext a:visited       {color:blue; text-decoration:none; }
+  td.chgview               { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:left; }
+  td.chgview:hover         { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#FFFF00; text-align:left; }
+  select.sel1              { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: normal; color: #000000; text-align:justify;}
+
+  img.slideimg             { width:16px; height:16px; vertical-align:middle;}
+  img			  {border: none;}
+  a.menu:hover             {font-weight:bold;}
+  a                        {color:black; }
+  a span.popup,
+  a:link span.popup        {display: none;}
+  a:visited                {color:black; text-decoration:none; }
+
+  a:hover span.popup       { display: inline; font-size:90%; position: absolute;
+                             background: #FFFF00 repeat; color: #000000;
+                             border-style:solid; border-width:1px;
+                             /*  width: 15em;   */
+                             margin: -0.5em 0 0 -5em;
+                             padding: 0.2em; z-index: 999;
+                             white-space:normal; text-decoration:none !important; text-align:left;
+                           }
+
+  a:hover>span.popup       { width:auto; /*  max-width:15em; */ }
+

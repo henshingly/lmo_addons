@@ -1,0 +1,60 @@
+/*
+// JoomlaWorks "Tabs & Slides" Module for Joomla! 1.5.x - Version 1.0
+// License: http://www.gnu.org/copyleft/gpl.html
+// Copyright (c) 2006 - 2008 JoomlaWorks, a Komrade LLC company.
+// More info at http://www.joomlaworks.gr
+// Developers: Fotis Evangelou - George Chouliaras
+// ***Last update: May 8th, 2008***
+*/
+
+/* --- Generic --- */
+a:active,a:focus {outline:0;}
+.tvhplan_clr {clear:both;height:0;line-height:0;}
+.tvhplan_modtitle {font-size:15px;font-weight:bold;padding:4px;margin:0 0 4px 0;border-bottom:1px solid #eee;}
+.tvhplan_clr {clear:both;height:0;line-height:0;}
+
+/* --- Tabs --- */
+.tvhplan_tabberlive {margin:4px 0px;padding:0px;}
+.tvhplan_tabberlive .tvhplan_tabbertab {margin:0px;padding:6px;border:1px solid #bbb;border-top:0px;/*height:300px;overflow:auto;*/}
+.tvhplan_tabberlive .tvhplan_tabbertab h2,
+.tvhplan_tabberlive .tvhplan_tabbertab h3,
+.tvhplan_tabberlive .tvhplan_tabbertabhide {display:none;}
+ul.tvhplan_tabbernav {margin:0px;padding:3px 4px;list-style:none;list-style-image:none;background:none;border-bottom:1px solid #bbb;line-height:normal;height:auto;}
+ul.tvhplan_tabbernav li {margin:0px;padding:0px;list-style:none;list-style-image:none;background:none;display:inline;}
+ul.tvhplan_tabbernav li a,
+ul.tvhplan_tabbernav li a:link {font-size:12px;font-weight:bold;margin:0px 1px;padding:3px 4px;color:#333;border:1px solid #bbb;border-bottom:none;background:#eee url(../img/slide_bg.png) repeat-x top;}
+ul.tvhplan_tabbernav li a:visited {color:#333;}
+ul.tvhplan_tabbernav li a:hover {font-size:12px;font-weight:bold;margin:0px 1px;padding:3px 4px;color:#c64934;border:1px solid #aaa;border-bottom:none;background:#f2f2f2;text-decoration:none;}
+ul.tvhplan_tabbernav li a:active,ul.tvhplan_tabbernav li a:focus {outline:0;}
+ul.tvhplan_tabbernav li.tvhplan_tabberactive a {background:#fff;border-bottom:1px solid #fff;}
+ul.tvhplan_tabbernav li.tvhplan_tabberactive a:hover {background:#fff;border-bottom:1px solid #fff;text-decoration:none;}
+ul.tvhplan_tabbernav li.tvhplan_tabberactive,
+ul.tvhplan_tabbernav li.tvhplan_tabberinactive {background:none;padding:0px;margin:0px;}
+.tvhplan_tabberlive .tvhplan_tabbertab,ul.tvhplan_tabbernav {text-align:left;} /* force content orientation */
+
+/* --- Slides --- */
+.tvhplan_slider {margin:4px 0px;padding:0px;}
+.tvhplan_slidewrapper {border:none;width:100%;visibility:hidden;height:0px;overflow:hidden;position:relative;margin:0;padding:0;}
+
+/* DEFAULT STYLING */
+.tvhplan_title {margin:0 0 1px 0;padding:0px;overflow:hidden;background:url(../img/slide_bg_r.png) no-repeat right;cursor:pointer;}
+.tvhplan_title_left {background:url(../img/slide_bg_l.png) no-repeat left;margin:0 1px 0 0;}
+.tvhplan_title_middle {background:url(../img/slide_bg_l.png) no-repeat ;margin:0 1px 0 0;}
+a.tvhplan_title_text,
+a.tvhplan_title_text:link {display:block;background:url(../img/star.png) no-repeat;background-position:0px 2px;padding:0 2px 0 20px;margin:0 0 0 8px;line-height:22px;font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9pt; font-size:11px;font-weight:bold;text-decoration:none;color:#444;}
+a.tvhplan_title_text:visited {color:#444;}
+a.tvhplan_title_text:hover {display:block;background:transparent url(../img/star.png) no-repeat;background-position:0px 2px;padding:0 2px 0 20px;margin:0 0 0 8px;line-height:22px;font-size:12px;font-weight:bold;text-decoration:none;color:#c64934;}
+.tvhplan_slidecontent {padding:4px 12px 8px 12px;margin:0px;position:relative;background:none;border:none;}
+.tvhplan_title_left,.tvhplan_slidecontent {text-align:left;} /* force content orientation */
+
+/* SOME NEW STYLING (just in case)
+.tvhplan_title {margin:0 0 1px 0;padding:0px;overflow:hidden;}
+.tvhplan_title_left {}
+a.tvhplan_title_text,
+a.tvhplan_title_text:hover {display:block;padding:0 2px 0 16px;margin:0;line-height:22px;font-size:12px;font-weight:bold;text-decoration:none;}
+a.tvhplan_title_text,
+a.tvhplan_title_text:link {color:#fff;background:url(../img/slide_bg_b.png) repeat-x;border:1px solid #444;}
+a.tvhplan_title_text:visited {color:#fff;}
+a.tvhplan_title_text:hover {color:#c64934;background:transparent url(../img/slide_bg.png) repeat-x;border:1px solid #ccc;}
+.tvhplan_slidecontent {padding:4px 12px 8px 12px;margin:0px;position:relative;background:#fbfbfb;border:1px dotted #aaa;border-top:none;}
+*/
