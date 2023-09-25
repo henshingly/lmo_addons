@@ -10,7 +10,7 @@
     <td align="left"><!--Name--></td>
     <td align="center"><!--Punkte--></td>
   </tr>
-   <!-- END Inhalt -->
+<!-- END Inhalt -->
 </table>  
 
  
