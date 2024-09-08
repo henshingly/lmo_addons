@@ -33,14 +33,14 @@
   */
 /** Changelog:
     27.08.2009  Happy Birthday to myself
-                erstellt PDF-Dokument für vereinsplan
+                erstellt PDF-Dokument fÃ¼r vereinsplan
     04.09.2009  DAS LMO-Logo fest eingepflegt
-                2 Logos eingepflegt, die über Admin-Oberfläche angepasst werden können
-    08.09.2009  Liga- und Notiz-Spalte über Admin-Oberfläche aus-/einblenden
-    10.09.2009  PDF-Ausgabeformat wählbar
-    13.09.2009  An LMO-Forum übergeben
+                2 Logos eingepflegt, die Ã¼ber Admin-OberflÃ¤che angepasst werden kÃ¶nnen
+    08.09.2009  Liga- und Notiz-Spalte Ã¼ber Admin-OberflÃ¤che aus-/einblenden
+    10.09.2009  PDF-Ausgabeformat wÃ¤hlbar
+    13.09.2009  An LMO-Forum Ã¼bergeben
     02.11.2010  Verwendet nun die LMO4-eigene PDF-Classlib
-                Dadurch unabhängig von PDF-Addon
+                Dadurch unabhÃ¤ngig von PDF-Addon
   */
 
 
@@ -59,7 +59,7 @@ switch ($cfgplanart) {
     $showplan=0;$titel=$text[$MyAddonName][7105];
     break;
   case "gast":
-    // Auswärtsspielplan
+    // AuswÃ¤rtsspielplan
     $showplan=1;$titel=$text[$MyAddonName][7106];
     break;
   case "result":
@@ -113,7 +113,7 @@ if ($filename <> '') {
       $cfglogo2posq    = array($spielplan['basics']['pdflogo2xq'],$spielplan['basics']['pdflogo2yq']);
 
       //**************************************************************************************
-      // diverse Variable mit Werten für ausgesuchte Ausgabeobjekte
+      // diverse Variable mit Werten fÃ¼r ausgesuchte Ausgabeobjekte
       //**************************************************************************************
       $pdf_blatt= 'a4';
       $pdf_format = $cfgformat;           // 0: Hochformat, 1: Querformat
@@ -144,7 +144,7 @@ if ($filename <> '') {
       //****************************************
       //Bilder
       //  pos : x, y
-      //  size: Breite, Höhe, Qualität (max. 75)
+      //  size: Breite, HÃ¶he, QualitÃ¤t (max. 75)
       //****************************************
       //Bilder im PDF-Header
       //$img_name1 = "tvh_logo.png";
@@ -174,9 +174,9 @@ if ($filename <> '') {
       }
       //****************************************
       //Texte
-      // x, y, Schriftgrösse
+      // x, y, SchriftgrÃ¶sse
       //****************************************
-      //Kopf-Überschrift
+      //Kopf-Ãœberschrift
       $header1_farbe = $text_red;
       $header1_text  = $spielplanName;
 
@@ -199,13 +199,13 @@ if ($filename <> '') {
       //Position Text-Objekte
       if ($pdf_format==1) {
         $hp_pos         = array(50,560,8);
-        $akt_pos        = array(600,560,6); // x, y, Schriftgrösse
+        $akt_pos        = array(600,560,6); // x, y, SchriftgrÃ¶sse
         $header1_pos    = array(330,535,12);
         $pdfversion_pos = array(50,34,6);
         $pdfcreate_pos  = array(600,34,6);
       } else {
         $hp_pos         = array(50,824,8);
-        $akt_pos        = array(360,824,6); // x, y, Schriftgrösse
+        $akt_pos        = array(360,824,6); // x, y, SchriftgrÃ¶sse
         $header1_pos    = array(200,800,12);
         $pdfversion_pos = array(50,34,6);
         $pdfcreate_pos  = array(380,34,6);
@@ -293,7 +293,7 @@ if ($filename <> '') {
       $pdf->line($firstline_pos[0],$firstline_pos[1],$firstline_pos[2],$firstline_pos[3]);
       $pdf->setStrokeColor($secondline_farbe[0],$secondline_farbe[1],$secondline_farbe[2],$secondline_farbe[3]);
       $pdf->line($secondline_pos[0],$secondline_pos[1],$secondline_pos[2],$secondline_pos[3]);
-      // Bilder einfügen
+      // Bilder einfÃ¼gen
       if ($img1_ok && $cfglogo1show==1) {
         $img= ImageCreatefrompng($img1);
         $pdf->addImage($img,$img_pos1[0],$img_pos1[1],$img_size1[0],$img_size1[1],$img_size1[2]);
@@ -306,7 +306,7 @@ if ($filename <> '') {
         $img= ImageCreatefrompng($img3);
         $pdf->addImage($img,$img_pos3[0],$img_pos3[1],$img_size3[0],$img_size3[1],$img_size3[2]);
       }
-      //Kopf-Überschrift
+      //Kopf-Ãœberschrift
       $pdf->setColor($header1_farbe[0],$header1_farbe[1],$header1_farbe[2]);
       $pdf->addText($header1_pos[0],$header1_pos[1],$header1_pos[2],$header1_text);
       //Linien Tabellenkopf
@@ -353,7 +353,7 @@ if ($filename <> '') {
         'protectRows'=> $ZeilenproSeite
       );
 
-      // jetzt Daten v. Spielplan übernehmen
+      // jetzt Daten v. Spielplan Ã¼bernehmen
       $spnr=0;$zeilengesamt=0;$zeilenspiele=0;$monatneu="";$monatalt="";$monatanzahl=0;
       for ($z=1;$z<count($spielplan);$z++) {
         if (isset($spielplan['spiel'.$z])) {

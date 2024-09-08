@@ -28,13 +28,13 @@
   */
 /** Changelog:
     06.08.2009  Happy Birthday
-    29.08.2009  Variable für Versionsnummer hinzugefügt
+    29.08.2009  Variable fÃ¼r Versionsnummer hinzugefÃ¼gt
                 Versionsnummer von 1.0.0 auf 1.1.0 gesetzt
-    30.08.2009  Erstellt nun Ausgabe-Datei für PDF-Funktionalität
+    30.08.2009  Erstellt nun Ausgabe-Datei fÃ¼r PDF-FunktionalitÃ¤t
                 weitere Infos in vereinsplan_Sort.php
     08.09.2009  diverse Template-Anpassungen notwendig
     12.09.2009  HTML- u. CSS-Validierungstest des Outputs
-    13.09.2009  An LMO-Forum übergeben
+    13.09.2009  An LMO-Forum Ã¼bergeben
     23.11.2010  Version auf 1.3.0 gesetzt
                 Diverse Fehlerabfragen und neue Template-Variablen eingepflegt
   */
@@ -123,7 +123,7 @@ if (!file_exists($MyConfigFile)) {
   $multi_cfgarray = parse_ini_file($MyConfigFile);
   // in Array lesen & mit Hauptscript zusammenlegen
   $multi_cfgarray += $main_cfgarray;
-  // Array in Variablen transformieren - bestehende werden überschrieben
+  // Array in Variablen transformieren - bestehende werden Ã¼berschrieben
   extract ($multi_cfgarray);
 
   $useBS='';$targetBlank = ' target="_blank" ';
@@ -148,7 +148,7 @@ if (!file_exists($MyConfigFile)) {
     $tvh_Erglist[] = array();
     $tvh_ErgNr[] = array();
     while (isset($multi_cfgarray['liga'.$i])) {
-      //Namen der gewüschten Liga einlesen
+      //Namen der gewÃ¼schten Liga einlesen
       $fav_liga[$i] = $multi_cfgarray['liga'.$i];
       $ii = 1;
       while (isset($multi_cfgarray[$multi_cfgarray['liga'.$i].'_'.$ii])) {
@@ -185,7 +185,7 @@ if (!file_exists($MyConfigFile)) {
 
     if ($vpRC<1) {
       $template = new HTML_Template_IT($MyTemplatePath);        // Template Object: alle Vereinsspiele
-      $templateA = new HTML_Template_IT($MyTemplatePath);        // Template Object: nur Auswärtsspiele
+      $templateA = new HTML_Template_IT($MyTemplatePath);        // Template Object: nur AuswÃ¤rtsspiele
       $templateH = new HTML_Template_IT($MyTemplatePath);        // Template Object: nur Heimspiele
       $templateErg = new HTML_Template_IT($MyTemplatePath);       // Template Object: aktuelle Ergebnissliste
       $template->loadTemplatefile($template_file.'.tpl.php',true,true);
@@ -239,7 +239,7 @@ if (!file_exists($MyConfigFile)) {
       $templateA->setVariable("PlanArt", $text[$MyAddonName][7106]);
       $Startzeile="";
 
-      //  URLs für die verschiedenen Planarten
+      //  URLs fÃ¼r die verschiedenen Planarten
       $url_phpaufruf='href="'.$MyPathUrl.'/showvereinsplan.php';
       $url_gesamt = $url_phpaufruf;
       $url_heim = $url_gesamt.'?planart=heim';

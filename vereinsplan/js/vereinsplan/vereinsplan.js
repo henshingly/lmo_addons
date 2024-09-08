@@ -7,9 +7,9 @@
 /*
  * Add some function used by vereinsplan-addon
  *    changelog:
- *    08.09.2009  Eingabe-Prüfungen für PDF-Werte eingefügt
- *    13.09.2009  An LMO-Forum übergeben
- *    23.11.2010  Abfragen Aktiv/Last für Version 1.3.0
+ *    08.09.2009  Eingabe-PrÃ¼fungen fÃ¼r PDF-Werte eingefÃ¼gt
+ *    13.09.2009  An LMO-Forum Ã¼bergeben
+ *    23.11.2010  Abfragen Aktiv/Last fÃ¼r Version 1.3.0
  */
 
 /**
@@ -97,7 +97,7 @@ function useCfg(elm,wert) {
      var zelle3= getElement("id","vereinsplantxtcreateplan");
      var inhalt = trim(elm.form.vereinsplandateiname.value);
   if (wert == "1") {
-      //cfg direkt überschreiben
+      //cfg direkt Ã¼berschreiben
       elm.form.vereinsplandateiname.style.color="gray";
       elm.form.vereinsplandateiname.disabled="disabled";
       if (zelle1) {zelle1.style.color="gray";}

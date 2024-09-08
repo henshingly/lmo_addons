@@ -28,7 +28,7 @@
   */
 /** Changelog:
     06.08.2009  Happy Birthday
-    13.09.2009  Version 1.1.0 an LMO-Forum übergeben
+    13.09.2009  Version 1.1.0 an LMO-Forum Ã¼bergeben
     08.10.2010  Version 1.1.1 wurde in LMO-SVN integriert und gepflegt
     05.11.2010  Version 1.1.2 bekannte Bugs aus LMO-Forum beseitigt
     05.11.2010  Version 1.2.0 gesetzt
@@ -36,8 +36,8 @@
                 Plan-Erstellen bei Speichern in Konfiguration steuerbar
                 Aktive Konfiguration steuerbar
     23.11.2011  Version 1.3.0 gesetzt
-                Unterstützung weiterer Konfigurations-Parameter zur Formatsteuerung, z.B. Tabellen-Link
-                Unterstützung vieler LMO-Ausgabe-Variablen für Template-Dateien
+                UnterstÃ¼tzung weiterer Konfigurations-Parameter zur Formatsteuerung, z.B. Tabellen-Link
+                UnterstÃ¼tzung vieler LMO-Ausgabe-Variablen fÃ¼r Template-Dateien
   */
 
 require(dirname(__FILE__).'/../../init.php');
@@ -71,11 +71,11 @@ $Url_To_OutputDir  = URL_TO_LMO.'/output';
 
 if($_SESSION['lmouserok']==2){
 
-isset($_POST['vereinsplanform0']) ? $vereinsplan_form0=true : $vereinsplan_form0=false;  // formular 0 ausgefüllt?
-isset($_POST['vereinsplanform01']) ? $vereinsplan_form01=true : $vereinsplan_form01=false;  // formular 01 ausgefüllt?
-isset($_POST['vereinsplanform1']) ? $vereinsplan_form1=true : $vereinsplan_form1=false;  // formular 1 ausgefüllt?
-isset($_POST['vereinsplanform2']) ? $vereinsplan_form2=true : $vereinsplan_form2=false;  // formular 2 ausgefüllt?
-isset($_POST['vereinsplanform3']) ? $vereinsplan_form3=true : $vereinsplan_form3=false;  // formular 3 ausgefüllt?
+isset($_POST['vereinsplanform0']) ? $vereinsplan_form0=true : $vereinsplan_form0=false;  // formular 0 ausgefÃ¼llt?
+isset($_POST['vereinsplanform01']) ? $vereinsplan_form01=true : $vereinsplan_form01=false;  // formular 01 ausgefÃ¼llt?
+isset($_POST['vereinsplanform1']) ? $vereinsplan_form1=true : $vereinsplan_form1=false;  // formular 1 ausgefÃ¼llt?
+isset($_POST['vereinsplanform2']) ? $vereinsplan_form2=true : $vereinsplan_form2=false;  // formular 2 ausgefÃ¼llt?
+isset($_POST['vereinsplanform3']) ? $vereinsplan_form3=true : $vereinsplan_form3=false;  // formular 3 ausgefÃ¼llt?
 
 $MyProgPathName = basename(dirname(__FILE__));
 
@@ -249,12 +249,12 @@ if ($cfg_exists==-1 && $cfg_counter>0) {
     $tvh_Erglist[] = array();
     $tvh_ErgNr[] = array();
     while (isset($MyCfg_array['liga'.$i])) {
-      //Namen der gewüschte Liga einlesen
+      //Namen der gewÃ¼schte Liga einlesen
       $fav_liga[$i] = $MyCfg_array['liga'.$i];
       $fav_liga_ok[$i] = -1;
       $ii = 1;
       while (isset($MyCfg_array[$MyCfg_array['liga'.$i].'_'.$ii])) {
-        //Nummer des gewünschten Teams einlesen
+        //Nummer des gewÃ¼nschten Teams einlesen
         $fav_team[$i][$ii] = $MyCfg_array[$MyCfg_array['liga'.$i].'_'.$ii];
         $fav_team_ok[$i][$ii] = -1;
         $ii++;
@@ -263,7 +263,7 @@ if ($cfg_exists==-1 && $cfg_counter>0) {
     }
     $anzahl_ligen = --$i;
 
-    // Prüfen, ob alle notwendigen Werte gesetzt sind
+    // PrÃ¼fen, ob alle notwendigen Werte gesetzt sind
     foreach ($DefaultCfg_array as $key => $val) {
       if (!isset($MyCfg_array[$key])) {$MyCfg_array[$key]=$DefaultCfg_array[$key];}
     }
@@ -365,7 +365,7 @@ if ($pfad_exists) {
             if($option_name=="Actual"){$ligadatei[$liga_counter]['aktueller_spieltag']=$option_wert;}
             if($option_name=="Type"){
               if($option_wert=="1"){$ligadatei[$liga_counter]['rundenbezeichnung']=$text[370];}
-            }          //Alle benötigten Werte gefunden -> Abbruch
+            }          //Alle benÃ¶tigten Werte gefunden -> Abbruch
             if($ligadatei[$liga_counter]['liga_name']!="" &&
                $ligadatei[$liga_counter]['favorit']!="" &&
                $ligadatei[$liga_counter]['aktueller_spieltag']!="" &&
@@ -411,7 +411,7 @@ if ($pfad_exists) {
     $z++;
   }
 }
-//feststellen, ob PDF-Erstellung ab LMO 4.0.0 möglich ist
+//feststellen, ob PDF-Erstellung ab LMO 4.0.0 mÃ¶glich ist
 $pdf_ok=0;
 if (file_exists(PATH_TO_ADDONDIR."/classlib/classes/pdf/class.ezpdf.php") ) {$pdf_ok=1;}
 
@@ -946,7 +946,7 @@ if ($vereinsplan_form0 && !$vereinsplan_form1 && !$vereinsplan_form2 && !$verein
                               </td>
                               <td class="nobr" align="left" colspan="1">_slides.css&nbsp;</td>
                             </tr>
-                            <tr>  <!-- XHTML-Unterstützung -->
+                            <tr>  <!-- XHTML-UnterstÃ¼tzung -->
                               <td class="nobr" align="right"><?php echo $text[$MyAddonName][7049];  ?>&nbsp;</td>
                               <td class="nobr" align="left"><input class="lmo-formular-input" type="checkbox" name="vereinsplanxhtml" <?php if ($MyCfg_array['vereinsplan_xhtml']==1) {echo 'checked="checked" ';}?>></td>
                               <td colspan="4">&nbsp;</td>
@@ -974,7 +974,7 @@ if ($vereinsplan_form0 && !$vereinsplan_form1 && !$vereinsplan_form2 && !$verein
                               <td class="nobr" align="right"><input class="lmo-formular-input" type="checkbox" name="vereinsplanteam_highlight" <?php if ($MyCfg_array['vereinsplan_team_highlight']==1) {echo 'checked="checked" ';} ?>></td>
                               <td class="nobr" align="left" ><?php echo $text[$MyAddonName][7041];  ?>&nbsp;</td>
                               <td colspan="2">&nbsp;</td>
-                            <tr>  <!-- Teamlogo klein, groß, mit Alttext / TeamHomepage verlinken  -->
+                            <tr>  <!-- Teamlogo klein, groÃŸ, mit Alttext / TeamHomepage verlinken  -->
                               <td class="nobr" align="right"><?php echo $text[$MyAddonName][7177]; ?>&nbsp;</td>
                               <td class="nobr" align="left">
                                 <select class="lmo-formular-input"  name="vereinsplanteamlogo" size="1">
@@ -995,7 +995,7 @@ if ($vereinsplan_form0 && !$vereinsplan_form1 && !$vereinsplan_form2 && !$verein
                               <td class="nobr" align="right"><input class="lmo-formular-input" type="checkbox" name="vereinsplanteamplantarget" <?php if ($MyCfg_array['vereinsplan_teamplantarget']==1) {echo 'checked="checked" ';} ?>></td>
                               <td class="nobr" align="left" ><?php echo $text[$MyAddonName][7144];  ?>&nbsp;</td>
                             </tr>
-                            <tr>  <!-- Team-HP-Symbol klein, groß, mit Alttext / TeamHomepage verlinken  -->
+                            <tr>  <!-- Team-HP-Symbol klein, groÃŸ, mit Alttext / TeamHomepage verlinken  -->
                               <td class="nobr" align="right" id="vereinsplanteamhpsymboltxt"><?php echo $text[$MyAddonName][7176].' '.$text[$MyAddonName][7187]; ?>&nbsp;</td>
                               <td class="nobr" align="left"><input class="lmo-formular-input" type="text" name="vereinsplanteamhpsymbol" size="20" value="<?php echo $MyCfg_array['vereinsplan_teamhpsymbol']; ?>" onChange="document.getElementById('vereinsplanteamhpsymbol').src='<?=URL_TO_IMGDIR;?>/'+this.value;">&nbsp;<img id="vereinsplanteamhpsymbol" src="<?=URL_TO_IMGDIR;?>/<?php echo $MyCfg_array['vereinsplan_teamhpsymbol']; ?>" alt=""/></td>
                               <td class="nobr" align="right"><input class="lmo-formular-input" type="checkbox" name="vereinsplanteamhplink" <?php if ($MyCfg_array['vereinsplan_teamhplink']==1) {echo 'checked="checked" ';} ?>></td>
@@ -1150,7 +1150,7 @@ if ($vereinsplan_form0 && !$vereinsplan_form1 && !$vereinsplan_form2 && !$verein
                         <td class="nobr" align="right" id="vereinsplanpdflogo2txt"><?php echo '2. '.$text[$MyAddonName][7124]; ?>&nbsp;</td>
                         <td class="nobr" align="left"><input class="lmo-formular-input" type="text" name="vereinsplanpdflogo2" size="20" value="<?php echo $MyCfg_array['vereinsplan_pdflogo2']; ?>" onkeyup="chkinput(this,this.value,'0')" onblur="chkinput(this,this.value,'1')" >&nbsp;.png</td>
                       </tr>
-                      <tr>  <!-- Vereinslogo Breite / Höhe -->
+                      <tr>  <!-- Vereinslogo Breite / HÃ¶he -->
                         <td class="nobr" align="right" id="vereinsplanpdflogo1wtxt" ><img src="<?php echo $ThisTemplateUrl?>/img/breit.gif" width="32" height="32" style="vertical-align:middle">&nbsp;<?php echo $text[$MyAddonName][7110]; ?> &nbsp;</td>
                         <td class="nobr" align="left" height="22" id="vereinsplanpdflogo1htxt">
                             <input class="lmo-formular-input"  type="text" name="vereinsplanpdflogo1w" size="4" value="<?php echo $MyCfg_array['vereinsplan_pdflogo1w']; ?>" onkeyup="chkinput(this,this.value,'0')" onblur="chkinput(this,this.value,'1')" >
@@ -1529,8 +1529,8 @@ function cmp ($a1, $a2) {
     if ($a2[$sort]==$a1[$sort]) return 0;
     return ($a1[$sort]>$a2[$sort]) ? 1 : -1;
   }else{ //Stringvergleich
-    $a1[$sort]=strtr($a1[$sort],"¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖØÙÚÛÜİßàáâãäåæçèéêëìíîïğñòóôõöøùúûüıÿ","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
-  	$a2[$sort]=strtr($a2[$sort],"¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖØÙÚÛÜİßàáâãäåæçèéêëìíîïğñòóôõöøùúûüıÿ","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
+    $a1[$sort]=strtr($a1[$sort],"Â¥ÂµÃ€ÃÃ‚ÃƒÃ„Ã…Ã†Ã‡ÃˆÃ‰ÃŠÃ‹ÃŒÃÃÃÃÃ‘Ã’Ã“Ã”Ã•Ã–Ã˜Ã™ÃšÃ›ÃœÃÃŸÃ Ã¡Ã¢Ã£Ã¤Ã¥Ã¦Ã§Ã¨Ã©ÃªÃ«Ã¬Ã­Ã®Ã¯Ã°Ã±Ã²Ã³Ã´ÃµÃ¶Ã¸Ã¹ÃºÃ»Ã¼Ã½Ã¿","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
+  	$a2[$sort]=strtr($a2[$sort],"Â¥ÂµÃ€ÃÃ‚ÃƒÃ„Ã…Ã†Ã‡ÃˆÃ‰ÃŠÃ‹ÃŒÃÃÃÃÃ‘Ã’Ã“Ã”Ã•Ã–Ã˜Ã™ÃšÃ›ÃœÃÃŸÃ Ã¡Ã¢Ã£Ã¤Ã¥Ã¦Ã§Ã¨Ã©ÃªÃ«Ã¬Ã­Ã®Ã¯Ã°Ã±Ã²Ã³Ã´ÃµÃ¶Ã¸Ã¹ÃºÃ»Ã¼Ã½Ã¿","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
   	return  strnatcasecmp($a1[$sort],$a2[$sort]);
   }
 }

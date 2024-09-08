@@ -45,7 +45,7 @@ switch ($showplan) {
         $outext='H.txt';
         break;
     case "gast":
-        // Ausw‰rtsspielplan
+        // Ausw√§rtsspielplan
         $outext='A.txt';
         break;
     case "result":

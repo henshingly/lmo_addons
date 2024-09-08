@@ -1,22 +1,22 @@
 ************************************************************
-Vereinsplan-Addon 1.3.0 für LMO 4
+Vereinsplan-Addon 1.3.0 fÃ¼r LMO 4
 ************************************************************
 Das Addon vereinsplan kann aus allen Ligen ein
 Gesamtspielplan des Vereins und eine Ergebnisliste nur
 des aktuellen Spieletages erstellen.
 
 Dabei sind die Ligen und die entsprechenden Mannschaften
-frei wählbar.
-Die Ausgabedateien können dann über einen Link in die
+frei wÃ¤hlbar.
+Die Ausgabedateien kÃ¶nnen dann Ã¼ber einen Link in die
 Homepage integriert werden.
 
 Das Ausgabeformat des Gesamtspielplanes kann wahlweise als
 dynamische (Slider-Funktion je Monat) oder statische Ansicht
 erfolgen.
-Die Pläne könne auch als PDF-Dokument erstellt werden.
+Die PlÃ¤ne kÃ¶nne auch als PDF-Dokument erstellt werden.
 
-Die Verwaltung des Vereinsplan-Addons wird über die
-LMO-Admin-Oberfläche bereitgestellt und unterstützt eine
+Die Verwaltung des Vereinsplan-Addons wird Ã¼ber die
+LMO-Admin-OberflÃ¤che bereitgestellt und unterstÃ¼tzt eine
 Vielzahl von LMO-Variablen zur Formatsteuerung und Template-
 Ausgabe.
 
@@ -24,8 +24,8 @@ Ausgabe.
 Hinweis:
 Vor Anpassungen an Standard-LMO-Dateien unbedingt
 vorher Sicherungs-Kopien erstellen.
-Dies gilt auch für alle selbst angepassten Vereinsplan-Dateien
-von Vorgängerversionen , z.B. cfg-Konfigurations-, Template-
+Dies gilt auch fÃ¼r alle selbst angepassten Vereinsplan-Dateien
+von VorgÃ¤ngerversionen , z.B. cfg-Konfigurations-, Template-
 und/oder CSS-Stylesheets-Dateien.
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -36,22 +36,22 @@ Alle notwendigen Dateien vom Addon-vereinsplan befinden sich
 der Zip-Datei.
 
  1.1 Die Zip-Datei muss entpackt werden.
- 1.2 Alle Verzeichnisse bzw. Dateien müssen in das LMO-Verzeichnis
-     der Homepage kopiert bzw. übertragen werden.
-     Bei der Erstinstallation werden keine Dateien überschrieben.
+ 1.2 Alle Verzeichnisse bzw. Dateien mÃ¼ssen in das LMO-Verzeichnis
+     der Homepage kopiert bzw. Ã¼bertragen werden.
+     Bei der Erstinstallation werden keine Dateien Ã¼berschrieben.
      ACHTUNG!
      Nicht kompatibel:
      Bis Version 1.0.0 : Templates, CSS, z.T. Programmdateien
      Bis Version 1.2.0 : Templates
- 1.3 Es werden Schreibrechte u.a. in lmo/config/vereinsplan benötigt.
- 1.4 Addon in LMO-Oberfläche einbinden
+ 1.3 Es werden Schreibrechte u.a. in lmo/config/vereinsplan benÃ¶tigt.
+ 1.4 Addon in LMO-OberflÃ¤che einbinden
  1.5 Addon aufrufen, konfigurieren und Plan erstellen
 
 **************************************************
-2.0 Einbinden in LMO-Admin-Oberfläche
+2.0 Einbinden in LMO-Admin-OberflÃ¤che
 **************************************************
-KEINE Änderungen zur Version 1.1.2
-bei der Einbindung in die Oberfläche
+KEINE Ã„nderungen zur Version 1.1.2
+bei der Einbindung in die OberflÃ¤che
 **************************************************
  2.1 Datei lmo-adminmain.php anpassen
  *************************************************
@@ -68,7 +68,7 @@ bei der Einbindung in die Oberfläche
   }
   /*Viewer-Addon*/
 
-  und an den Anfang (!) der nächsten Zeile folgenden Addon-Text kopieren
+  und an den Anfang (!) der nÃ¤chsten Zeile folgenden Addon-Text kopieren
 
   /*Vereinsplan-Addon*/
   include(PATH_TO_ADDONDIR."/vereinsplan/lmo-adminmain.inc.php");
@@ -84,7 +84,7 @@ bei der Einbindung in die Oberfläche
     $viewer_addr_optionen = $_SERVER['PHP_SELF']."?action=admin&amp;todo=vieweroptions";
     /*Viewer-Addon*/
 
-    und an den Anfang (!) der nächsten Zeile folgenden Addon-Text kopieren
+    und an den Anfang (!) der nÃ¤chsten Zeile folgenden Addon-Text kopieren
 
     /*Vereinsplan-Addon*/
     $vereinsplan_addr_optionen = $_SERVER['PHP_SELF']."?action=admin&amp;todo=vereinsplanoptions";
@@ -102,7 +102,7 @@ bei der Einbindung in die Oberfläche
     }
     /*Viewer-Addon*/
 
-    und an den Anfang (!) der nächsten Zeile folgenden Addon-Text kopieren
+    und an den Anfang (!) der nÃ¤chsten Zeile folgenden Addon-Text kopieren
 
     /*Vereinsplan-Addon*/
     elseif($todo=="vereinsplanoptions"){
@@ -121,7 +121,7 @@ bei der Einbindung in die Oberfläche
  ************************************
  2.2 Datei lmo-adminedit.php anpassen
  ************************************
-  2.2.1 Addon-Wertübergabe einbinden
+  2.2.1 Addon-WertÃ¼bergabe einbinden
   ***********************************
   folgende Zeilen suchen:
 
@@ -133,7 +133,7 @@ bei der Einbindung in die Oberfläche
         <input type="hidden" name="st" value="<?=$st; ?>">
 
 
-  und an den Anfang (!) der nächsten Zeile folgenden Addon-Text kopieren
+  und an den Anfang (!) der nÃ¤chsten Zeile folgenden Addon-Text kopieren
 
         <!-- Vereinsplan-Addon -->
         <?php include(PATH_TO_ADDONDIR."/vereinsplan/lmo-adminedit.inc.php");?>
@@ -141,7 +141,7 @@ bei der Einbindung in die Oberfläche
 
 
   **********************************
-  2.2.2 Addon-Wertübergabe einbinden
+  2.2.2 Addon-WertÃ¼bergabe einbinden
   **********************************
   folgende Zeilen am Ende der Datei suchen:
 
@@ -152,7 +152,7 @@ bei der Einbindung in die Oberfläche
           </tr>
 
 
-  und an den Anfang (!) der nächsten Zeile folgenden Addon-Text kopieren
+  und an den Anfang (!) der nÃ¤chsten Zeile folgenden Addon-Text kopieren
 
           <!-- Addon vereinsplan -->
           <?php include(PATH_TO_ADDONDIR."/vereinsplan/lmo-adminedit1.inc.php");?>
@@ -173,7 +173,7 @@ bei der Einbindung in die Oberfläche
         fclose($datei);
 
 
-  und an den Anfang (!) der nächsten Zeile folgenden Addon-Text kopieren
+  und an den Anfang (!) der nÃ¤chsten Zeile folgenden Addon-Text kopieren
 
         /* addon vereinsplan */
         include(PATH_TO_ADDONDIR."/vereinsplan/lmo-savefile.inc.php");

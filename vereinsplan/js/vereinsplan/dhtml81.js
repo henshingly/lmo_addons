@@ -28,7 +28,7 @@ if (document.getElementById) {
 if (window.opera) {OP = true;}
 if (document.all && !OP) {MS = true;}
 
-//Original: keine Abfrage über Framegrenzen hinweg
+//Original: keine Abfrage Ã¼ber Framegrenzen hinweg
 function getElement (Mode, Identifier, ElementNumber) {
   var Element;
   if (DOM) {
@@ -172,7 +172,7 @@ function setContent (Mode, Identifier, ElementNumber, Text) {
   }
 }
 
-//angepasste Version: Abfrage über Framegrenzen hinweg
+//angepasste Version: Abfrage Ã¼ber Framegrenzen hinweg
 function getFElem (FrameNumber, Mode, Identifier, ElementNumber) {
  with (this.frames[FrameNumber]) {
   var Element;

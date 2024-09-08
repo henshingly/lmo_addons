@@ -1,19 +1,19 @@
 7000=Vereinsplan
 7001=Konfiguration LMO-Vereinsplan 1.3.0
-7010=Schritt 1 von 4 - Konfigurationsdatei w&auml;hlen
+7010=Schritt 1 von 4 - Konfigurationsdatei wählen
 7011=Konfigurationsdatei
 7012=weiter
 7013=bearbeiten
 7014=aktivieren
 7015=erfolgreich
-7016 durchgef&uuml;hrt
+7016 durchgeführt
 7017=Ansicht Liga-Ergebnisspeicherung
 7018=Admins
 7019=Vereinsplan-Dateien erstellen
 7020=Schritt 2 von 4 - Basiseinstellungen
 7021=fehlt! (Defaultwerte werden benutzt)
 7022=aktuelle Konfiguration aus:
-7023=cfg-Datei direkt &uuml;berschreiben
+7023=cfg-Datei direkt überschreiben
 7024=neue Konfiguration unter:
 7025=.tvh speichern (Dateierweiterung fest)
 7026=verwenden
@@ -30,8 +30,8 @@
 7037=Uhrzeitformat
 7038=Tordummy
 7039=Cachefaktor
-7040=Nach dem xx Aufrufen des Vereinsplans wird der Cache erneuert (je mehr Besuche, destso h&ouml;her kann der Wert sein)
-7041=gew&auml;hltes Team hervorheben
+7040=Nach dem xx Aufrufen des Vereinsplans wird der Cache erneuert (je mehr Besuche, destso höher kann der Wert sein)
+7041=gewähltes Team hervorheben
 7042=Ausgabe-Dateien
 7043=Slider-Ansicht
 7044=Dateien am Ende erstellen
@@ -39,13 +39,13 @@
 7046=Notiz-Icon anzeigen
 7047=Notiz
 7048=Bericht
-7049=XHTML unterst&uuml;tzen
+7049=XHTML unterstützen
 7050=Schritt 3 von 4 - Welche Ligen sollen angezeigt werden?
 7051=Ligen gefunden
-7052=Achtung! Nicht alle Arten von KO-Runden werden vom Vereinsplan unterst&uuml;tzt!
+7052=Achtung! Nicht alle Arten von KO-Runden werden vom Vereinsplan unterstützt!
 7053=folgende in der Konfiguration definierte Liga-Datei fehlt:
 7054=nicht gefunden!
-7055=Alles ausw&auml;hlen
+7055=Alles auswählen
 7056=Auswahl aufheben
 7057=Auswahl umkehren
 7058=Ligaverzeichnis
@@ -55,12 +55,12 @@
 7062=Link zum Plan
 7063=und
 7064=Link zu den Resultaten
-7065=Den jeweiligen Link an die Stelle einf&uuml;gen, an der die Vereinsplan-Ausgabe erscheinen soll.
+7065=Den jeweiligen Link an die Stelle einfügen, an der die Vereinsplan-Ausgabe erscheinen soll.
 7066=und Plan erstellt
 7067=Konnte Datei nicht speichern (fehlende Schreibrechte?).
 7068=Hinweis
 7069=Konfiguration wurde gespeichert in
-7070=Konfiguration erst nutzbar, wenn Dateierweiterung '.tvh' ge&auml;ndert ist zu:
+7070=Konfiguration erst nutzbar, wenn Dateierweiterung '.tvh' geändert ist zu:
 7071=Konfiguration
 7072=nicht
 7073=definiert
@@ -88,10 +88,10 @@
 7103=
 7104=Gesamtspielplan
 7105=Heimspielplan
-7106=Ausw&auml;rtsspielplan
+7106=Auswärtsspielplan
 7107=anzeigen
 7110=Breite
-7111=H&ouml;he
+7111=Höhe
 7112=x-Pos
 7113=y-Pos
 7114=Die letzten
@@ -114,10 +114,10 @@
 7143=neue Seite je Monat
 7144=neues Fenster
 
-7150=Bitte w&auml;hlen
+7150=Bitte wählen
 7151=aufklappen
 7152=zuklappen
-7153=&ouml;ffnen
+7153=öffnen
 7154=schliessen
 7155=alles
 7156=Ansicht
@@ -126,7 +126,7 @@
 7165=Letzte
 7166=Stylesheet Basis
 7167=Stylesheet Slider
-7168=Url
+7168=URL
 7169=Logo
 7170=Ergebnis
 7171=Keine Liga definiert
@@ -137,8 +137,8 @@
 7176=Homepage
 7177=Teamlogo
 7178=kleines
-7179=gro&szlig;es
-7180=gro&szlig; mit Text
+7179=großes
+7180=groß mit Text
 7181=Teamname
 7182=lang
 7183=mittel
@@ -153,8 +153,8 @@
 7193=speichern
 7194=Abschnitt
 7195=ausblenden
-7196=f&uuml;r
+7196=für
 7197=alle
 7198=Beenden
 7199=Letzte Aktualisierung:
-7200=Vereinsplan 1.3.0 Addon f&uuml;r LMO 4.0.2 &copy; LMO-Group
+7200=Vereinsplan 1.3.0 Addon für LMO 4.1.2 © LMO-Group

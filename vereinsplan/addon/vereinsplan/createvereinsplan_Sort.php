@@ -28,16 +28,16 @@
   */
 /** Changelog:
     06.08.2009  Happy Birthday
-    13.09.2009  Version 1.1.0 an LMO-Forum übergeben
+    13.09.2009  Version 1.1.0 an LMO-Forum Ã¼bergeben
     08.10.2010  Version 1.1.1 wurde in LMO-SVN integriert und gepflegt
     05.11.2010  Version 1.1.2 bekannte Bugs aus LMO-Forum beseitigt
     05.11.2010  Version 1.2.0 gesetzt
     23.11.2010  Version 1.3.0 gesetzt
-                Unterstützung weiterer Konfigurations-Parameter zur Formatsteuerung, z.B. Tabellen-Link
-                Unterstützung vieler LMO-Ausgabe-Variablen für Template-Dateien
-    30.11.2011  Version 1.3.0 an LMO-Forum übergeben
-    12.12.2010  Forum-ID: 11281 backslash beseitigt, Verlinkungen überprüft
-    29.01.2011  Forum-ID: 11322 Torfaktor bei Ergebnis berücksichtigt
+                UnterstÃ¼tzung weiterer Konfigurations-Parameter zur Formatsteuerung, z.B. Tabellen-Link
+                UnterstÃ¼tzung vieler LMO-Ausgabe-Variablen fÃ¼r Template-Dateien
+    30.11.2011  Version 1.3.0 an LMO-Forum Ã¼bergeben
+    12.12.2010  Forum-ID: 11281 backslash beseitigt, Verlinkungen Ã¼berprÃ¼ft
+    29.01.2011  Forum-ID: 11322 Torfaktor bei Ergebnis berÃ¼cksichtigt
   */
 
 $MyAddonName = 'vereinsplan';
@@ -102,13 +102,13 @@ $cfgsliderstart=isset($multi_cfgarray['vereinsplan_sliderstart'])?$multi_cfgarra
 $vp_dirliga=isset($multi_cfgarray['vereinsplan_ligapfad'])?$multi_cfgarray['vereinsplan_ligapfad']:'ligen';
 if (substr($vp_dirliga,-1)!=='/') {$vp_dirliga = $vp_dirliga.'/';}
 
-// Durchläufe sooft Ligen vorhanden sind
+// DurchlÃ¤ufe sooft Ligen vorhanden sind
 for($i=1; $i<=$anzahl_ligen ; $i++) {
   $akt_liga=new liga();
   // Ligadatei vorhanden?
   if ($akt_liga->loadFile(PATH_TO_LMO.'/'.$vp_dirliga.$fav_liga[$i]) == TRUE) {
 
-    //etwas unglücklich nochmals einzulesen, um den Abbruchstatus zu erhalten
+    //etwas unglÃ¼cklich nochmals einzulesen, um den Abbruchstatus zu erhalten
     // aber was soll's ...
     unset($absage);$absage = array();
     $datei = fopen(PATH_TO_LMO."/".$vp_dirliga.$files.$fav_liga[$i],"rb");
@@ -204,8 +204,8 @@ for($i=1; $i<=$anzahl_ligen ; $i++) {
               //Begegnung noch nicht verwendet
               $xx_tmpNr++;
               $game_used[$xx_tmpNr]=$liga_game;
-              //Anfang Relevante Daten der Begegnung : Falls kein Datum bzw. Zeit vorhanden, dann Anwender ein bißchen stubsen  ...
-              // denn er sollte seine Spielpläne dann schon besser pflegen....
+              //Anfang Relevante Daten der Begegnung : Falls kein Datum bzw. Zeit vorhanden, dann Anwender ein biÃŸchen stubsen  ...
+              // denn er sollte seine SpielplÃ¤ne dann schon besser pflegen....
               $tmp_datum = $myPartie->datumString(date("11.11.1111"),$multi_cfgarray['vereinsplan_datumsformat']);
               //$tmp_datum = $myPartie->datumString(date("d.m.y"),$multi_cfgarray['vereinsplan_datumsformat']);
               $tmp_sort = substr($tmp_datum,6).substr($tmp_datum,3,2).substr($tmp_datum,0,2);
@@ -388,7 +388,7 @@ for($i=1; $i<=$anzahl_ligen ; $i++) {
               $mgp_hl_s="";
               $mgp_hl_e="";
               $HeimHL=0;$GastHL=0;
-              //gewünschte Teams hervorheben?
+              //gewÃ¼nschte Teams hervorheben?
               if ($heimspiel==1 & $cfghighlight) {
                 $mhp_hl_s='<strong>';
                 $mhp_hl_e.='</strong>';
@@ -401,14 +401,14 @@ for($i=1; $i<=$anzahl_ligen ; $i++) {
               }
               if ($bturnier!==FALSE) {
                  if ($bhalledaheim!==FALSE) {
-                   //Turnierform z.B. bei E-Jugend, wenn "Auswärtsspiel" in eigener Halle stattfindet-> Heimspiel
+                   //Turnierform z.B. bei E-Jugend, wenn "AuswÃ¤rtsspiel" in eigener Halle stattfindet-> Heimspiel
                    if ($heimspiel==0) {
                       $heimspiel=1;
                       if ($gastspiel==1) {$gastspiel=0;}
                    }
                  }
                  else {
-                   //Turnierform z.B. bei E-Jugend, wenn "Heimspiel" in auswärtiger Halle stattfindet-> Gastspiel
+                   //Turnierform z.B. bei E-Jugend, wenn "Heimspiel" in auswÃ¤rtiger Halle stattfindet-> Gastspiel
                    if ($heimspiel==1) {
                       $heimspiel=0;
                       if ($gastspiel==0) {$gastspiel=1;}
@@ -458,13 +458,13 @@ for($i=1; $i<=$anzahl_ligen ; $i++) {
               }
             } //ende game_used
             else {
-              //gewünschte Teams spielen gegeneinander
+              //gewÃ¼nschte Teams spielen gegeneinander
               if ($cfghighlight) {
                 $tvh_Playlist[$xx_tmpNr][2]= '<strong>'.$Heim.'</strong>';
                 $tvh_Playlist[$xx_tmpNr][3]= '<strong>'.$Gast.'</strong>';
               }
             }
-          }    // Ende gewünschtes Team gefunden
+          }    // Ende gewÃ¼nschtes Team gefunden
         }      // Ende Durchlauf alle Teams
       }        // Ende Durchlauf alle Spiele des Spieltags
     }          // Ende Durchlauf alle Spieltage der Liga
@@ -481,7 +481,7 @@ if ($xx_tmpNr>=0) {
    asort($tvh_nummer,SORT_NUMERIC);
    $tvh_tmp=array_values($tvh_nummer); //Datum MinMax
 
-   //Skript für Slider Eventzeilen
+   //Skript fÃ¼r Slider Eventzeilen
    $EventzeileG  = "var isMin=0;"."\n";
    $EventzeileG .= "var Diffx;"."\n";
    $EventzeileG .= "var jetzt = new Date();"."\n";
@@ -589,7 +589,7 @@ if ($xx_tmpNr>=0) {
          $JahrNeuA=$JahrNeu; $MonatNeuA=$MonatNeu; $TagNeuA=$TagNeu;
          $WoTagNeuA=$WoTagNeu; $KWNeuA=$KWNeu;  $DatumNeuA=$DatumNeu;
 
-         // Tabellenkopf einmalig für statisches Template setzen
+         // Tabellenkopf einmalig fÃ¼r statisches Template setzen
          if ($SpNr==0 && $Slider==0) {
             $zout = "<!-- Kopfzeile f&uuml;r Tabelle -->\n";
             $template->setCurrentBlock("KopfMonat");
@@ -655,7 +655,7 @@ if ($xx_tmpNr>=0) {
             if ($JahrNeu=='1111') {$MonatsText=$text[$MyAddonName][7074];}
             $MonatAltG=$MonatNeuG;
             $zout = "";
-            //Eventzeile für Slider-Template erstellen
+            //Eventzeile fÃ¼r Slider-Template erstellen
             $EventId=$JahrNeu.$MonatAltG;
             $EventHide=sprintf("%04d",$JahrNeu.$MonatAltG);
             $EventHideG .= ',"'.$EventHide.'"';
@@ -744,7 +744,7 @@ if ($xx_tmpNr>=0) {
          }
          $template->parseCurrentBlock();
 
-         // Ergebnis in Gesamtspielplan übernehmen
+         // Ergebnis in Gesamtspielplan Ã¼bernehmen
          $template->setCurrentBlock("Inhalt");
          $template->setVariable("Spieltag",$Spieltag);
          $template->setVariable("LigaDatum",$LigaDatum);
@@ -797,7 +797,7 @@ if ($xx_tmpNr>=0) {
                           "wotag" => $WoTagpdf, "datum" => $Datumpdf, "zeit" => $Uhrzeit, "heim" => $Heimpdf, "gast" => $Gastpdf, "tore" => $Tore,
                           "liga" => $Liganamepdf, "notiz" => $Notizpdf, "heimhl" => $HeimHL, "gasthl" => $GastHL
                          );
-         //Das gleiche nochmals für Heim- bzw. Auswärtsplan erledigen
+         //Das gleiche nochmals fÃ¼r Heim- bzw. AuswÃ¤rtsplan erledigen
          if ($heimspiel==1) {
             // Heimspielplan erstellen
             if ($SpNrH==0) {$DatumMinH = $DatumNeuH;}
@@ -806,7 +806,7 @@ if ($xx_tmpNr>=0) {
 	   if ($DatumNeuH!=$DatumAltH) {$DatumAltH=$DatumNeuH;$WoTagAltH=$WoTagNeuH;}
 	   else { if ($cfgdatumshow==0) {$DatumNeuH="&nbsp;";$WoTagNeuH="&nbsp;";} }
 
-            // Tabellenkopf einmalig für statisches Template setzen
+            // Tabellenkopf einmalig fÃ¼r statisches Template setzen
             if ($SpNrH==0 && $Slider==0) {
                $zout = "<!-- Kopfzeile f&uuml;r Tabelle -->\n";
                $templateH->setCurrentBlock("KopfMonat");
@@ -853,7 +853,7 @@ if ($xx_tmpNr>=0) {
                $MonatName = $MonatsNamen[$MonatNeuH-1];
                $MonatKlein = strtolower($MonatName);
                $zout = "";
-               //Eventzeile für Slider-Template erstellen
+               //Eventzeile fÃ¼r Slider-Template erstellen
                $EventId=$JahrNeu.$MonatAltH;
                $EventHide=sprintf("%04d",$JahrNeu.$MonatAltH);
                $EventHideH .= ',"'.$EventHide.'"';
@@ -942,7 +942,7 @@ if ($xx_tmpNr>=0) {
             }
             $templateH->parseCurrentBlock();
 
-            // Ergebnis in Heimspielplan übernehmen
+            // Ergebnis in Heimspielplan Ã¼bernehmen
            $templateH->setCurrentBlock("Inhalt");
            $templateH->setVariable("Spieltag",$Spieltag);
            $templateH->setVariable("LigaDatum",$LigaDatum);
@@ -991,14 +991,14 @@ if ($xx_tmpNr>=0) {
            $templateH->parseCurrentBlock();
          }
          if ($gastspiel==1) {
-            // Auswärtsspielplan erstellen
+            // AuswÃ¤rtsspielplan erstellen
             if ($SpNrA==0) {$DatumMinA = $DatumNeu;}
             $DatumMaxA = $DatumNeu;
 
        	   if ($DatumNeuA!=$DatumAltA) {$DatumAltA=$DatumNeuA;$WoTagAltA=$WoTagNeuA;}
 	   else { if ($cfgdatumshow==0) {$DatumNeuA="&nbsp;";$WoTagNeuA="&nbsp;";} }
 
-            // Tabellenkopf einmalig für statisches Template setzen
+            // Tabellenkopf einmalig fÃ¼r statisches Template setzen
             if ($SpNrA==0 && $Slider==0) {
                $zout = "<!-- Kopfzeile f&uuml;r Tabelle -->\n";
                $templateA->setCurrentBlock("KopfMonat");
@@ -1045,7 +1045,7 @@ if ($xx_tmpNr>=0) {
                $MonatName = $MonatsNamen[$MonatNeuA-1];
                $MonatKlein = strtolower($MonatName);
                $zout = "";
-               //Eventzeile für Slider-Template erstellen
+               //Eventzeile fÃ¼r Slider-Template erstellen
                $EventId=$JahrNeu.$MonatAltA;
                $EventHide=sprintf("%04d",$JahrNeu.$MonatAltA);
                $EventHideA .= ',"'.$EventHide.'"';
@@ -1134,7 +1134,7 @@ if ($xx_tmpNr>=0) {
             }
             $templateA->parseCurrentBlock();
 
-            // Ergebnis in Auswärtsspielplan übernehmen
+            // Ergebnis in AuswÃ¤rtsspielplan Ã¼bernehmen
             $templateA->setCurrentBlock("Inhalt");
             $templateA->setVariable("Spieltag",$Spieltag);
             $templateA->setVariable("LigaDatum",$LigaDatum);
@@ -1181,14 +1181,14 @@ if ($xx_tmpNr>=0) {
             $templateA->setVariable("Notiz",$Notiz);
             $templateA->setVariable("Bericht",$Bericht);
             $templateA->parseCurrentBlock();
-         }  //Ende Auswärtsspiel erstellen
+         }  //Ende AuswÃ¤rtsspiel erstellen
       }     //Ende Datumsangabe NICHT leer
    }	   //Ende foreach, jedes Spiel
 
 
    //allg. Nacharbeiten und dann den Spielplan-Templates zuordnen
    if ($Slider==1) {
-      //Slider-Angaben vervollständigen
+      //Slider-Angaben vervollstÃ¤ndigen
       $zout = "var eventids = new Array(".substr($EventHideG,1).");"."\n";
       $EventzeileG = $zout.$EventzeileG.$OpenCloseFunktion;
 
@@ -1368,7 +1368,7 @@ if (isset($multi_cfgarray['vereinsplan_pdf']) && $multi_cfgarray['vereinsplan_pd
   $cfgpdf=1;
 }
 
-//feststellen, ob PDF-Erstellung ab LMO4 möglich ist
+//feststellen, ob PDF-Erstellung ab LMO4 mÃ¶glich ist
 $pdf_ok=0;$pdf_needed2=0;
 if (file_exists(PATH_TO_ADDONDIR."/classlib/classes/pdf/class.ezpdf.php")) {$pdf_needed2=1;}
 if (($pdf_needed2+$cfgpdf==2) && $SpNr>0) {
@@ -1377,7 +1377,7 @@ if (($pdf_needed2+$cfgpdf==2) && $SpNr>0) {
   $MyPdfDataFileName = $MyConfigFileName.'.pdf.txt';
   $MyPdfOutputFile = $MyOutputPath.'/'.$MyPdfDataFileName;
 
-  //  URLs für die verschiedenen PDFs
+  //  URLs fÃ¼r die verschiedenen PDFs
   $url_pdfaufruf='href="'.$MyPathUrl.'/vereinsplan-pdf.php';
   $url_pdfgesamt = $url_pdfaufruf;
   $url_pdfheim = $url_pdfgesamt.'?planart=heim';
