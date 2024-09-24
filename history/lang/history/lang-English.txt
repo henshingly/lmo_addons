@@ -1,9 +1,0 @@
-000=[<acronym title='lmo-history for LMO &copy; Marcus Schug'>&copy;</acronym>]
-001=Ewige Tabelle
-002=Champion
-003=Absteiger
-005=Error: League not found!
-006=<acronym title='Punkte pro Spiel'>&#216;</acronym>
-007=<acronym title='Anzahl der Meisterschaften'>M</acronym>
-008=<acronym title='Anzahl der Abstiege'>A</acronym>
-009=<acronym title='Anzahl der Spielzeiten'>S</acronym>

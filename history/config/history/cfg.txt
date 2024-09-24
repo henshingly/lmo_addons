@@ -1,5 +1,0 @@
-lmo_ftpdir=
-lmo_ftpuser=
-lmo_ftpserver=
-lmo_ftppass=
-lmo_autocreate=
