@@ -1,13 +1,16 @@
 <?php
 /* vim: set expandtab tabstop=4 shiftwidth=4: */
 //+----------------------------------------------------------------------+
-//| WAMP (XP-SP2/2.2/5.2/5.1.0)                                          |
+//| WAMP (XP-SP1/1.3.24/4.0.12/4.3.0)                                    |
 //+----------------------------------------------------------------------+
-//| Copyright(c) 2001-2008 Michael Wimmer                                |
+//| Copyright (c) 1992-2003 Michael Wimmer                               |
 //+----------------------------------------------------------------------+
-//| Licence: GNU General Public License v3                               |
+//| I don't have the time to read through all the licences to find out   |
+//| what the exactly say. But it's simple. It's free for non commercial  |
+//| projects, but as soon as you make money with it, i want my share :-) |
+//| (License : Free for non-commercial use)                              |
 //+----------------------------------------------------------------------+
-//| Authors: Michael Wimmer <flaimo@gmail.com>                           |
+//| Authors: Michael Wimmer <flaimo@gmx.net>                             |
 //+----------------------------------------------------------------------+
 //
 // $Id$
@@ -19,20 +22,19 @@
 * We need the base class
 */
 include_once 'class.iCalBase.inc.php';
-
 /**
 * Container for an alarm (used in event and todo)
 *
-* Tested with WAMP (XP-SP2/2.2/5.2/5.1.0)
-* Last Change: 2008-04-07
+* Tested with WAMP (XP-SP1/1.3.24/4.0.4/4.3.0)
+* Last Change: 2003-03-29
 *
-* @access public
-* @author Michael Wimmer <flaimo@gmail.com>
-* @copyright Copyright © 2002-2008, Michael Wimmer
-* @license GNU General Public License v3
-* @link http://code.google.com/p/flaimo-php/
+* @desc Container for an alarm (used in event and todo)
+* @access private
+* @author Michael Wimmer <flaimo 'at' gmx 'dot' net>
+* @copyright Michael Wimmer
+* @link http://www.flaimo.com/
 * @package iCalendar
-* @version 2.002
+* @version 1.032
 */
 class iCalAlarm extends iCalBase {
 
@@ -41,27 +43,44 @@ class iCalAlarm extends iCalBase {
 	/*-------------------*/
 
 	/**#@+
+	* @access private
 	* @var int
 	*/
 	/**
 	* Kind of alarm (0 = DISPLAY, 1 = EMAIL, (not supported: 2 = AUDIO, 3 = PROCEDURE))
+	*
+	* @desc Kind of alarm (0 = DISPLAY, 1 = EMAIL, (not supported: 2 = AUDIO, 3 = PROCEDURE))
 	*/
-	private $action;
+	var $action;
 
 	/**
 	* Minutes the alarm goes off before the event/todo
+	*
+	* @desc Minutes the alarm goes off before the event/todo
 	*/
-	private $trigger = 0;
+	var $trigger = 0;
+
+	/**
+	* Headline for the alarm (if action = Display)
+	*
+	* @desc Headline for the alarm (if action = Display)
+	* @var string
+	*/
+	var $summary;
 
 	/**
 	* Duration between the alarms in minutes
+	*
+	* @desc Duration between the alarms in minutes
 	*/
-	private $duration;
+	var $duration;
 
 	/**
 	* How often should the alarm be repeated
+	*
+	* @desc How often should the alarm be repeated
 	*/
-	private $repeat;
+	var $repeat;
 	/**#@-*/
 
 	/*-----------------------*/
@@ -69,6 +88,7 @@ class iCalAlarm extends iCalBase {
 	/*-----------------------*/
 
 	/**#@+
+	* @access private
 	* @return void
 	*/
 	/**
@@ -76,34 +96,35 @@ class iCalAlarm extends iCalBase {
 	*
 	* Only job is to set all the variablesnames
 	*
+	* @desc Constructor
 	* @param int $action  0 = DISPLAY, 1 = EMAIL, (not supported: 2 = AUDIO, 3 = PROCEDURE)
 	* @param int $trigger  Minutes the alarm goes off before the event/todo
 	* @param string $summary  Title for the alarm
 	* @param string $description  Description
-	* @param array $attendees  key = attendee name, value = e-mail, second value = role of the attendee
+	* @param (array) $attendees  key = attendee name, value = e-mail, second value = role of the attendee
 	* [0 = CHAIR | 1 = REQ | 2 = OPT | 3 =NON] (example: array('Michi' => 'flaimo@gmx.net,1'); )
 	* @param int $duration  Duration between the alarms in minutes
 	* @param int $repeat  How often should the alarm be repeated
 	* @param string $lang  Language of the strings used in the event (iso code)
 	* @uses setAction()
 	* @uses setTrigger()
-	* @uses iCalBase::setSummary()
+	* @uses setSummary()
 	* @uses iCalBase::setDescription()
-	* @uses iCalBase::setAttendees()
+	* @uses setAttendees()
 	* @uses setDuration()
 	* @uses setRepeat()
 	* @uses iCalBase::setLanguage()
 	*/
-	function __construct($action, $trigger, $summary, $description, $attendees,
+	function iCalAlarm($action, $trigger, $summary, $description, $attendees,
 					   $duration, $repeat, $lang) {
-		parent::__construct();
-		$this->setVar('action', $action);
-		$this->setVar('trigger', $trigger);
+        parent::iCalBase();
+        $this->setAction($action);
+		$this->setTrigger($trigger);
 		parent::setSummary($summary);
 		parent::setDescription($description);
 		parent::setAttendees($attendees);
-		$this->setVar('duration', $duration);
-		$this->setVar('repeat', $repeat);
+		$this->setDuration($duration);
+		$this->setRepeat($repeat);
 		parent::setLanguage($lang);
 	} // end constructor
 
@@ -112,27 +133,71 @@ class iCalAlarm extends iCalBase {
 	/*-------------------*/
 
 	/**
-	* Set class variable
+	* Set $action variable
 	*
-	* @param string $var class variable
-	* @param mixed $value value
-	* @since 2.000 - 2003-07-07
+	* @desc Set $action variable
+	* @param int $action 0 = DISPLAY, 1 = EMAIL, (not supported: 2 = AUDIO, 3 = PROCEDURE)
+	* @see getAction()
+	* @see $action
+	* @since 1.021 - 2002-12-24
 	*/
-	private function setVar($var, $value) {
-		$this->$var = (int) $value;
+	function setAction($action = 0) {
+		$this->action = (int) $action;
 	} // end function
 
+	/**
+	* Set $trigger variable
+	*
+	* @desc Set $trigger variable
+	* @param int $minutes
+	* @see getTrigger()
+	* @see  $minutes
+	* @since 1.021 - 2002-12-24
+	*/
+	function setTrigger($minutes = 0) {
+		$this->trigger = (int) $minutes;
+	} // end function
+
+	/**
+	* Set $duration variable
+	*
+	* @desc Set $duration variable
+	* @param int $int
+	* @see getDuration()
+	* @see  $duration
+	* @since 1.020 - 2002-12-24
+	*/
+	function setDuration($int = 0) {
+		$this->duration = (int) $int;
+	} // end function
+
+	/**
+	* Set $repeat variable
+	*
+	* @desc Set $repeat variable
+	* @param int $int  in minutes
+	* @see getRepeat()
+	* @see  $repeat
+	* @since 1.020 - 2002-12-24
+	*/
+	function setRepeat($int = 0) {
+		$this->duration = (int) $int;
+	} // end function
+	/**#@-*/
+
 	/**#@+
+	* @access public
 	* @since 1.021 - 2002-12-24
 	*/
 	/**
 	* Get $action variable
 	*
+	* @desc Get $action variable
 	* @return string $action
 	* @see setAction()
-	* @see iCalAlarm::$action
+	* @see $action
 	*/
-	public function getAction() {
+	function &getAction() {
 		$action_status = (array) array('DISPLAY', 'EMAIL', 'AUDIO', 'PROCEDURE');
 		return (string) ((array_key_exists($this->action, $action_status)) ? $action_status[$this->action] : $action_status[0]);
 	} // end function
@@ -140,27 +205,39 @@ class iCalAlarm extends iCalBase {
 	/**
 	* Get $trigger variable
 	*
+	* @desc Get $trigger variable
 	* @return int $trigger
+	* @see setTrigger()
+	* @see $trigger
 	*/
-	public function getTrigger() {
+	function &getTrigger() {
 		return (int) $this->trigger;
 	} // end function
+	/**#@-*/
 
 	/**
 	* Get $duration variable
 	*
+	* @desc Get $duration variable
 	* @return int $duration
+	* @see setDuration()
+	* @see $duration
+	* @access private
 	*/
-	public function getDuration() {
+	function &getDuration() {
 		return (int) $this->duration;
 	} // end function
 
 	/**
 	* Get $repeat variable
 	*
+	* @desc Get $repeat variable
 	* @return int $repeat
+	* @see setRepeat()
+	* @see $repeat
+	* @access private
 	*/
-	public function getRepeat() {
+	function &getRepeat() {
 		return (int) $this->duration;
 	} // end function
 } // end class iCalAlarm

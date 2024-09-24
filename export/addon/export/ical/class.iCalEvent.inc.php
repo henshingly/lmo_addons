@@ -1,13 +1,16 @@
 <?php
 /* vim: set expandtab tabstop=4 shiftwidth=4: */
 //+----------------------------------------------------------------------+
-//| WAMP (XP-SP2/2.2/5.2/5.1.0)                                          |
+//| WAMP (XP-SP1/1.3.24/4.0.12/4.3.0)                                    |
 //+----------------------------------------------------------------------+
-//| Copyright(c) 2001-2008 Michael Wimmer                                |
+//| Copyright (c) 1992-2003 Michael Wimmer                               |
 //+----------------------------------------------------------------------+
-//| Licence: GNU General Public License v3                               |
+//| I don't have the time to read through all the licences to find out   |
+//| what the exactly say. But it's simple. It's free for non commercial  |
+//| projects, but as soon as you make money with it, i want my share :-) |
+//| (License : Free for non-commercial use)                              |
 //+----------------------------------------------------------------------+
-//| Authors: Michael Wimmer <flaimo@gmail.com>                           |
+//| Authors: Michael Wimmer <flaimo@gmx.net>                             |
 //+----------------------------------------------------------------------+
 //
 // $Id$
@@ -19,20 +22,24 @@
 * We need the base class
 */
 include_once 'class.iCalBase.inc.php';
+/**
+* We need the child class
+*/
+include_once 'class.iCalAlarm.inc.php';
 
 /**
 * Container for a single event
 *
-* Tested with WAMP (XP-SP2/2.2/5.2/5.1.0)
-* Last Change: 2008-04-07
+* Last Change: 2003-03-29
+* Tested with WAMP (XP-SP1/1.3.24/4.0.4/4.3.0)
 *
-* @access public
-* @author Michael Wimmer <flaimo@gmail.com>
-* @copyright Copyright © 2002-2008, Michael Wimmer
-* @license GNU General Public License v3
-* @link http://code.google.com/p/flaimo-php/
+* @desc Container for a single event
+* @access private
+* @author Michael Wimmer <flaimo 'at' gmx 'dot' net>
+* @copyright Michael Wimmer
+* @link http://www.flaimo.com/
 * @package iCalendar
-* @version 2.002
+* @version 1.032
 */
 class iCalEvent extends iCalBase {
 
@@ -40,67 +47,80 @@ class iCalEvent extends iCalBase {
 	/* V A R I A B L E S */
 	/*-------------------*/
 
+	/**#@+
+	* @access private
+	*/
 	/**
 	* Timestamp of the start date
 	*
+	* @desc Timestamp of the start date
 	* @var int
 	*/
-	private $startdate_ts;
+	var $startdate_ts;
 
 	/**
 	* Timestamp of the end date
 	*
+	* @desc Timestamp of the end date
 	* @var int
 	*/
-	private $enddate_ts;
+	var $enddate_ts;
 
 	/**
 	* OPAQUE (1) or TRANSPARENT (1)
 	*
+	* @desc OPAQUE (1) or TRANSPARENT (1)
 	* @var int
 	*/
-	private $transp = 0;
+	var $transp = 0;
 
 	/**
 	* start date in iCal format
 	*
+	* @desc start date in iCal format
 	* @var string
 	*/
-	private $startdate;
+	var $startdate;
 
 	/**
 	* end date in iCal format
 	*
+	* @desc end date in iCal format
 	* @var string
 	*/
-	private $enddate;
+	var $enddate;
 
 	/**
 	* Automaticaly created: md5 value of the start date + end date
 	*
+	* @desc Automaticaly created: md5 value of the start date + end date
 	* @var string
 	*/
-	private $uid;
+	var $uid;
 
 	/**
 	* '' = never, integer < 4 numbers = number of times, integer >= 4 = timestamp
 	*
+	* @desc '' = never, integer < 4 numbers = number of times, integer >= 4 = timestamp
 	* @var mixed
 	*/
-	private $rec_end;
+	var $rec_end;
 
 	/**
 	* If alarm is set, holds alarm object
 	*
+	* @desc If alarm is set, holds alarm object
 	* @var object
 	*/
-	private $alarm;
+	var $alarm;
+	/**#@-*/
 
 	/*-----------------------*/
 	/* C O N S T R U C T O R */
 	/*-----------------------*/
 
 	/**#@+
+	* @access private
 	* @return void
 	*/
 	/**
@@ -108,6 +128,7 @@ class iCalEvent extends iCalBase {
 	*
 	* Only job is to set all the variablesnames
 	*
+	* @desc Constructor
 	* @param array $organizer  The organizer - use array('Name', 'name@domain.com')
 	* @param int $start  Start time for the event (timestamp; if you want an allday event the startdate has to start at 00:00:00)
 	* @param int $end  Start time for the event (timestamp or write 'allday' for an allday event)
@@ -118,10 +139,10 @@ class iCalEvent extends iCalBase {
 	* @param string $summary  Title for the event
 	* @param int $class  (0 = PRIVATE | 1 = PUBLIC | 2 = CONFIDENTIAL)
 	* @param array $attendees  key = attendee name, value = e-mail, second value = role of the attendee [0 = CHAIR | 1 = REQ | 2 = OPT | 3 =NON] (example: array('Michi' => 'flaimo@gmx.net,1'); )
-	* @param int $prio  riority = 0–9
-	* @param int $frequency  frequency: 0 = once, secoundly – yearly = 1–7
+	* @param int $prio  riority = 0â€“9
+	* @param int $frequency  frequency: 0 = once, secoundly â€“ yearly = 1â€“7
 	* @param mixed $rec_end  recurrency end: ('' = forever | integer = number of times | timestring = explicit date)
-	* @param int $interval  Interval for frequency (every 2,3,4 weeks…)
+	* @param int $interval  Interval for frequency (every 2,3,4 weeksâ€¦)
 	* @param string $days  Array with the number of the days the event accures (example: array(0,1,5) = Sunday, Monday, Friday
 	* @param string $weekstart  Startday of the Week ( 0 = Sunday - 6 = Saturday)
 	* @param string $exept_dates  exeption dates: Array with timestamps of dates that should not be includes in the recurring event
@@ -155,11 +176,11 @@ class iCalEvent extends iCalBase {
 	* @uses iCalBase::setURL()
 	* @uses setUID()
 	*/
-	function __construct($organizer, $start, $end, $location, $transp, $categories,
+	function iCalEvent($organizer, $start, $end, $location, $transp, $categories,
 					   $description, $summary, $class, $attendees, $prio, $frequency,
 					   $rec_end, $interval, $days, $weekstart, $exept_dates,
 					   $alarm, $status, $url, $language, $uid) {
-		parent::__construct();
+		parent::iCalBase();
 		parent::setLanguage($language);
 		parent::setOrganizer($organizer);
 		$this->setStartDate($start);
@@ -193,29 +214,31 @@ class iCalEvent extends iCalBase {
 	* Sets the end for a recurring event (0 = never ending,
 	* integer < 4 numbers = number of times, integer >= 4 enddate)
 	*
+	* @desc Get $rec_end variable
 	* @param int $freq
 	* @see getRecEnd()
-	* @uses iCalEvent::$rec_end
+	* @see $rec_end
 	* @since 1.010 - 2002-10-26
 	*/
-	private function setRecEnd($freq = '') {
+	function setRecEnd($freq = '') {
 		if (strlen(trim($freq)) < 1) {
 			$this->rec_end = 0;
 		} elseif (is_int($freq) && strlen(trim($freq)) < 4) {
 			$this->rec_end = $freq;
 		} else {
-			$this->rec_end = (string) parent::formatDate($freq);
+			$this->rec_end = (string) gmdate('Ymd\THi00\Z',$freq);
 		} // end if
 	} // end function
 
 	/**
 	* Set $startdate_ts variable
 	*
+	* @desc Set $startdate_ts variable
 	* @param int $timestamp
 	* @see getStartDateTS()
-	* @uses iCalEvent::$startdate_ts
+	* @see $startdate_ts
 	*/
-	private function setStartDateTS($timestamp = 0) {
+	function setStartDateTS($timestamp = 0) {
 		if (is_int($timestamp) && $timestamp > 0) {
 			$this->startdate_ts = (int) $timestamp;
 		} else {
@@ -226,11 +249,12 @@ class iCalEvent extends iCalBase {
 	/**
 	* Set $enddate_ts variable
 	*
+	* @desc Set $enddate_ts variable
 	* @param int $timestamp
 	* @see getEndDateTS()
-	* @uses iCalEvent::$enddate_ts
+	* @see  $enddate_ts
 	*/
-	private function setEndDateTS($timestamp = 0) {
+	function setEndDateTS($timestamp = 0) {
 		if (is_int($timestamp) && $timestamp > 0) {
 			$this->enddate_ts = (int) $timestamp;
 		} else {
@@ -241,30 +265,33 @@ class iCalEvent extends iCalBase {
 	/**
 	* Set $startdate variable
 	*
+	* @desc Set $startdate variable
 	* @param int $timestamp
 	* @see getStartDate()
-	* @uses setStartDateTS()
-	* @uses iCalEvent::$startdate
-	* @uses iCalEvent::$startdate_ts
+	* @see $startdate
 	*/
-	private function setStartDate($timestamp = 0) {
+	function setStartDate($timestamp = 0) {
 		$this->setStartDateTS($timestamp);
-		$this->startdate = (string) parent::formatDate($this->startdate_ts);
+		if (date('H:i:s', $this->startdate_ts) == '00:00:00') {
+			$this->startdate = (string) gmdate('Ymd',$this->startdate_ts);
+		} else {
+			$this->startdate = (string) gmdate('Ymd\THi00\Z',$this->startdate_ts);
+		} // end if
 	} // end function
 
 	/**
 	* Set $enddate variable
 	*
+	* @desc Set $enddate variable
 	* @param (mixed) $timestamp or 'allday'
 	* @see getEndDate()
-	* @uses iCalEvent::$enddate
-	* @uses iCalEvent::$enddate_ts
+	* @see $enddate
 	* @uses setEndDateTS()
 	*/
-	private function setEndDate($timestamp = 0) {
+	function setEndDate($timestamp = 0) {
 		if (is_int($timestamp)) {
 			$this->setEndDateTS($timestamp);
-			$this->enddate = (string) parent::formatDate($this->enddate_ts);
+			$this->enddate = (string) gmdate('Ymd\THi00\Z',$this->enddate_ts);
 		} else {
 			$this->enddate = (string) '';
 		} // end if
@@ -274,108 +301,124 @@ class iCalEvent extends iCalBase {
 	/**
 	* Set $transp variable
 	*
+	* @desc Set $transp variable
 	* @param int $int  0|1
 	* @see getTransp()
-	* @uses iCalEvent::$transp
+	* @see $transp
 	*/
-	private function setTransp($int = 0) {
+	function setTransp($int = 0) {
 		$this->transp = (int) $int;
 	} // end function
 
 	/**
 	* Set $uid variable
 	*
+	* @desc Set $uid variable
     * @param int $uid
 	* @see getUID()
-	* @uses iCalEvent::$uid
-	* @uses iCalEvent::$startdate
-	* @uses iCalEvent::$enddate
+	* @see $uid
 	*/
-	private function setUID($uid = 0) {
-		if (strlen(trim($uid)) > 0) {
+        function setUID($uid = 0) {
+          if (strlen(trim($uid)) > 0) {
             $this->uid = (string) $uid;
-        } else {
-            $rawid = (string) $this->startdate . 'plus' .  $this->enddate;
+          } else {
+            $rawid      = (string) $this->startdate . 'plus' . $this->enddate . 'plus' . $this->summary;
             $this->uid = (string) md5($rawid);
-        }
-	} // end function
+          }
+        } // end function
+
 
 	/**
 	* Set $alarm object
 	*
-	* @param array $alarm
+	* @desc Set $attendees variable
+	* @param (array) $attendees
 	* @see getAttendees()
-	* @uses iCalEvent::$alarm
-	* @uses iCalAlarm
+	* @see $attendees
 	* @since 1.001 - 2002-10-10
 	*/
-	private function setAlarm($alarm = '') {
+	function setAlarm($alarm = '') {
 		if (is_array($alarm)) {
 			$this->alarm = (object) new iCalAlarm($alarm[0], $alarm[1],
 												  $alarm[2], $alarm[3], $alarm[4],
-												  $alarm[5], $alarm[6], parent::getLanguage());
+												  $alarm[5], $alarm[6], $this->lang);
 		} // end if
 	} // end function
 	/**#@-*/
 
+	/**#@+
+	* @access public
+	*/
 	/**
 	* Get $rec_end variable
 	*
-	* @return mixed $rec_end
+	* @desc Get $rec_end variable
+	* @return (mixed) $rec_end
 	* @see setRecEnd()
+	* @see $rec_end
 	* @since 1.010 - 2002-10-26
 	*/
-	public function getRecEnd() {
+	function &getRecEnd() {
 		return $this->rec_end;
 	} // end function
 
 	/**
 	* Get $startdate_ts variable
 	*
-	* @return int $startdate_ts
+	* @desc Get $startdate_ts variable
+	* @return (int) $startdate_ts
 	* @see setStartDateTS()
+	* @see $startdate_ts
 	*/
-	public function getStartDateTS() {
+	function &getStartDateTS() {
 		return (int) $this->startdate_ts;
 	} // end function
 
 	/**
 	* Get $enddate_ts variable
 	*
-	* @return int $enddate_ts
+	* @desc Get $enddate_ts variable
+	* @return (int) $enddate_ts
 	* @see setEndDateTS()
+	* @see $enddate_ts
 	*/
-	public function getEndDateTS() {
+	function &getEndDateTS() {
 		return (int) $this->enddate_ts;
 	} // end function
 
 	/**
 	* Get $startdate variable
 	*
-	* @return int $startdate
+	* @desc Get $startdate variable
+	* @return (int) $startdate
 	* @see setStartDate()
+	* @see $startdate
 	*/
-	public function getStartDate() {
+	function &getStartDate() {
 		return (string) $this->startdate;
 	} // end function
 
 	/**
 	* Get $enddate variable
 	*
+	* @desc Get $enddate variable
 	* @return string $enddate
 	* @see setEndDate()
+	* @see $enddate
 	*/
-	public function getEndDate() {
+	function &getEndDate() {
 		return (string) $this->enddate;
 	} // end function
 
 	/**
 	* Get $transp variable
 	*
-	* @return int $transp
+	* @desc Get $transp variable
+	* @return (int) $transp
 	* @see setTransp()
+	* @see $transp
 	*/
-	public function getTransp() {
+	function &getTransp() {
 		$transps = (array) array('OPAQUE','TRANSPARENT');
 		return (string) ((array_key_exists($this->transp, $transps)) ? $transps[$this->transp] : $transps[0]);
 	} // end function
@@ -383,22 +426,27 @@ class iCalEvent extends iCalBase {
 	/**
 	* Get $uid variable
 	*
+	* @desc Get $uid variable
 	* @return string $uid
 	* @see setUID()
+	* @see $uid
 	*/
-	public function getUID() {
+	function &getUID() {
 		return (string) $this->uid;
 	} // end function
 
 	/**
 	* Get $alarm object
 	*
-	* @return string $alarm
-	* @see setAlarm()
+	* @desc Get $attendees variable
+	* @return string $attendees
+	* @see setAttendees()
+	* @see $attendees
 	* @since 1.001 - 2002-10-10
 	*/
-	public function getAlarm() {
+	function &getAlarm() {
 		return ((is_object($this->alarm)) ? $this->alarm : FALSE);
 	} // end function
+	/**#@-*/
 } // end class iCalEvent
 ?>

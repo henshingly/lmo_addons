@@ -1,0 +1,5 @@
+iCal_create=0
+iCal_allGames=0
+iCal_calendars=
+iCal_eventDuration=3600
+iCal_eventUrlPrefix=_blank
