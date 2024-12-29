@@ -127,7 +127,7 @@ for ($i = 1; $i <= 1; $i++) {
                 for ($spieltag = $start; $spieltag <= $ende; $spieltag++) {
                     $akt_spieltag = $akt_liga->spieltagForNumber($spieltag);
                     foreach ($akt_spieltag->partien as $yPartie) {
-                        if (($yPartie->heim->name == $a ) or ($yPartie->gast->name == $a )){
+                        if ((@$yPartie->heim->name == $a ) or (@$yPartie->gast->name == $a )){
                             $Datum = $yPartie->datumString($leer = '__.__.');
                             $Zeit = $yPartie->zeitString($leer = '__:__ ') . ' ' . $text['stats'][31];
                             $Heim = $yPartie->heim->name;
@@ -150,7 +150,7 @@ for ($i = 1; $i <= 1; $i++) {
                                 $spielstat .= "        </tr>\n";
                             }
                         }
-                        if (($yPartie->heim->name == $b ) or ($yPartie->gast->name == $b )){
+                        if ((@$yPartie->heim->name == $b ) or (@$yPartie->gast->name == $b )){
                             $Datumb = $yPartie->datumString($leer = '__.__.');
                             $Zeitb = $yPartie->zeitString($leer = '__:__ ') . ' ' . $text['stats'][31];
                             $Heimb = $yPartie->heim->name;
@@ -268,7 +268,7 @@ for ($i = 1; $i <= $anzahl_ligen; $i++) {
                     $asiegh = $asiegh + 1;
                 }
                 if ($yPartie->hToreString() == $yPartie->gToreString()) {
-                    if ($yPartie->hToreString() != $tordummy) {
+                    if ($yPartie->hToreString() !== $tordummy) {
                         $aunentschiedenh = $aunentschiedenh + 1;
                     }
                 }
@@ -344,7 +344,7 @@ for ($i = 1; $i <= $anzahl_ligen; $i++) {
                     $aniederlagea = $aniederlagea + 1;
                 }
                 if ($yPartie->hToreString() == $yPartie->gToreString()) {
-                    if ($yPartie->hToreString() != $tordummy ) {
+                    if ($yPartie->hToreString() !== $tordummy ) {
                         $aunentschiedena = $aunentschiedena + 1;
                     }
                 }
@@ -356,7 +356,7 @@ for ($i = 1; $i <= $anzahl_ligen; $i++) {
             }
             $template->parseCurrentBlock();
         }
-        $hteam = $yPartie->heim->name;
+        $hteam = @$yPartie->heim->name;
         $template->parse("Liga");
         $asieg = $asiega + $asiegh;
         $aunentschieden = $aunentschiedena + $aunentschiedenh;

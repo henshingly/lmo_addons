@@ -5,13 +5,13 @@
 004=Predchozí výsledky
 005=Setkání od
 006=a
-007=Zustatek mezi
+007=Team Vergleich Archiv
 008=Hrát proti sobe
 009=dokument PDF
 010=do zprávy o utkání v LMO (v novém okne)
 011=Vytvorí dokument PDF a zobrazí jej
 012=otevre se v novém okne
-013=
+013=Zustatek mezi
 014=
 015=Chyba pri nacítání ligy 
 016=Doba výpoctu a rozvržení stránky

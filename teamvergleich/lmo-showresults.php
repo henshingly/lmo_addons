@@ -171,7 +171,7 @@ foreach($datsort as $key => $val) {
       echo "&nbsp;";
     }
     // Team Vergleich ADDON BEGIN
-    include(PATH_TO_ADDONDIR.'/stats/lmo-showresults.inc.php');
+    if (file_exists(PATH_TO_ADDONDIR.'/stats/lmo-showresults.inc.php')) include(PATH_TO_ADDONDIR.'/stats/lmo-showresults.inc.php');
     // Team Vergleich ADDON END
     ?></td>
   </tr><?php  }

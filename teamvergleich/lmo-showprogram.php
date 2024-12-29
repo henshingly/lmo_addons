@@ -118,9 +118,8 @@ if ($file!="") {
               echo "&nbsp;";
             }
           }
-/** bisherige Ergebnisse (AddOn stats) */
-          include(PATH_TO_ADDONDIR.'/stats/lmo-showprogram.inc.php');
-/** Notizen anzeigen */
+/** bisherige Ergebnisse (AddOn Team Vergleich) */
+          if (file_exists(PATH_TO_ADDONDIR.'/stats/lmo-showprogram.inc.php')) include(PATH_TO_ADDONDIR.'/stats/lmo-showprogram.inc.php');
 /** Notizen anzeigen */
           if ($mnote[$j][$i]!="" || $msieg[$j][$i]>0) {
             $lmo_spielnotiz=$lmo_teamaicon."<strong>".$teams[$teama[$j][$i]]."</strong> - ".$lmo_teambicon."<strong>".$teams[$teamb[$j][$i]]."</strong> ".applyFactor($goala[$j][$i],$goalfaktor).":".applyFactor($goalb[$j][$i],$goalfaktor);

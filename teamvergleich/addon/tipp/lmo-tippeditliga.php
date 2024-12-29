@@ -302,8 +302,7 @@ if ($tipp_jokertipp==1){ ?>
     echo "&nbsp;";
   }
   // Team Vergleich ADDON BEGIN
-  if (file_exists(PATH_TO_ADDONDIR.'/stats/lmo-tippeditliga.inc.php'))
-  include(PATH_TO_ADDONDIR.'/stats/lmo-tippeditliga.inc.php');
+  if (file_exists(PATH_TO_ADDONDIR.'/stats/lmo-tippeditliga.inc.php')) include(PATH_TO_ADDONDIR.'/stats/lmo-tippeditliga.inc.php');
   // Team Vergleich ADDON END
 ?></td>
 </tr>

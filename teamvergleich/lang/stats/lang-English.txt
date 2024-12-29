@@ -5,13 +5,13 @@
 004=Deliverables
 005=Meetings by
 006=and
-007=Balance between
+007=Team Vergleich Archiv
 008=Play against each other
 009=PDF document
 010=to the Game report (in a new browser window)
 011=Creates a PDF document and display it
 012=will be opened in a new browser window
-013=
+013=Balance between
 014=
 015=Error in partition downloading League
 016=Time for calculation and building the page

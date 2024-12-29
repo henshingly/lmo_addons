@@ -451,7 +451,7 @@ if ($file != "") {
           }
         }
         /** Stats Addon */
-        include (PATH_TO_ADDONDIR . '/stats/lmo-showkoresults.inc.php');
+        if (file_exists(PATH_TO_ADDONDIR . '/stats/lmo-showkoresults.inc.php')) include (PATH_TO_ADDONDIR . '/stats/lmo-showkoresults.inc.php');
         /** Notizen anzeigen
          *
          */

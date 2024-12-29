@@ -5,13 +5,13 @@
 004=Prethodni rezultati
 005=Susreti od
 006=i
-007=Stanje između
+007=Team Vergleich Archiv
 008=Igrajte jedan protiv drugog
 009=PDF dokument
 010=na izvještaj meča u LMO (u novom prozoru)
 011=Kreira PDF dokument i prikazuje ga
 012=otvara se u novom prozoru
-013=
+013=Stanje između
 014=
 015=Greška pri učitavanju lige 
 016=Trajanje proračuna i izgled stranice

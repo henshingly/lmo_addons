@@ -111,11 +111,21 @@ if ($_SESSION['lmouserok'] == 2) {
   }
   /*Viewer-Addon*/
   /*Stats-Addon*/
-  echo "&nbsp;";
-  if (($todo!="stats")){
-    echo "<a href='{$adda}stats' onclick='return chklmolink();' title='{$text['stats'][0]}'>{$text['stats'][0]}</a>";
-  } else {
-    echo $text['stats'][0];
+  if (file_exists(PATH_TO_ADDONDIR.'/stats/createstats.php')){
+    echo "&nbsp;";
+    if (($todo!="stats")){
+      echo "<a href='{$adda}stats' onclick='return chklmolink();' title='{$text['stats'][0]}'>{$text['stats'][0]}</a>";
+    } else {
+      echo $text['stats'][0];
+    }
+  }
+  if (file_exists(PATH_TO_ADDONDIR.'/stats/archive.php')){
+    echo "&nbsp;";
+    if (($todo != 'archive')) {
+      echo "<a href='{$adda}archive' onclick='return chklmolink();' title='{$text['stats'][7]}' class='nav-link'>{$text['stats'][7]}</a>";
+    } else {
+      echo $text['stats'][7];
+    }
   }
   /*Stats-Addon*/
   /*PDF-Addon*/
@@ -236,8 +246,11 @@ if ($_SESSION['lmouserok'] == 2) {
     }
     /*Viewer-Addon*/
     /*Stats-Addon*/
-    elseif($todo=="stats"){
+    elseif ($todo=="stats"){
       require(PATH_TO_ADDONDIR."/stats/createstats.php");
+    }
+    elseif ($todo == 'archive') {
+      require(PATH_TO_ADDONDIR.'/stats/archive.php');
     }
     /*Stats-Addon*/
     /*PDF-Addon*/

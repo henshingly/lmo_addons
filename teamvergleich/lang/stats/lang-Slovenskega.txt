@@ -5,13 +5,13 @@
 004=Bisherige Ergebnisse
 005=Begegnungen von
 006=und
-007=Bilanz zwischen
+007=Team Vergleich Archiv
 008=Spiele gegeneinander
 009=PDF Dokument
 010=zum Spielbericht im LMO (in neuem Fenster)
 011=Erstellt ein PDF Dokument und zeigt dies an
 012=wird in neuem Fenster geöffnet
-013=
+013=Bilanz zwischen
 014=
 015=Fehler beim Laden der Liga 
 016=Dauer Berechnungen u. Seitenaufbau

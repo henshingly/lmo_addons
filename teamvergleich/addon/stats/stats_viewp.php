@@ -56,7 +56,7 @@ $pdf->addText(100, 824, 15, $text['stats'][20]);
 $pdf->addText(390, 824, 10, date('d.m.Y - G:i:s') . $text['stats'][31]);
 $pdata = array(200, 10, 400, 20, 300, 50, 150, 40);
 $pdf->line(60, 820, 535, 820);
-$pdf->addText(100, 800, 15, $text['stats'][7]);
+$pdf->addText(100, 800, 15, $text['stats'][13]);
 $pdf->addText(100, 780, 15, $a . ' ' . $text['stats'][6] . ' ' . $b);
 $pdf->line(60, 25, 535, 25);
 $pdf->addText(80, 14, 6, TEAM_VERGLEICH);

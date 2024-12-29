@@ -5,13 +5,13 @@
 004=Résultats précédents
 005=Rencontres de
 006=et
-007=Solde entre
+007=Team Vergleich Archiv
 008=Jouer les uns contre les autres
 009=Document PDF
 010=vers le rapport de match dans le LMO (dans nouvelle fenêtre)
 011=Crée un document PDF et l'affiche
 012=ouvre dans une nouvelle fenêtre
-013=
+013=Solde entre
 014=
 015=Erreur de chargement de la ligue 
 016=Durée des calculs et mise en page

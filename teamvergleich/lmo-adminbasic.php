@@ -260,6 +260,7 @@ include(PATH_TO_LMO."/lmo-adminsubnavi.php");
                 <option value="5"<?php if ($ligastats == '0') {echo " disabled";} elseif ($onrun==5) {echo " selected";}?>><?php echo $text[18]?></option>
                 <option value="6"<?php if ($dats == '0')      {echo " disabled";} elseif ($onrun==6) {echo " selected";}?>><?php echo $text[140]?></option>
                 <option value="7"<?php if ($mittore == '0')   {echo " disabled";} elseif ($onrun==7) {echo " selected";}?>><?php echo $text[485]?></option>
+				<option value="8"<?php if ($stats == '0')     {echo " disabled";} elseif ($onrun==8) {echo " selected";}?>><?php echo $text["stats"][0] ?></option>
               </select>
             </td>
           </tr><?php      }?>
@@ -356,13 +357,13 @@ include(PATH_TO_LMO."/lmo-adminsubnavi.php");
           <tr>
             <td class="nobr" align="right"><input type="checkbox" class="lmo-formular-input" name="xurlb" onChange="dolmoedit()"<?php if ($urlb==1) {echo " checked";}?>></td>
             <td class="nobr" align="left"><acronym title="<?php echo $text[266];?>"><?php echo $text[265];?></acronym></td>
-	  </tr>
-	  <!-- // Team Vergleich ADDON BEGIN -->
-	  <tr>
-	    <td class="nobr" align="right"><input type="checkbox" class="lmo-formular-input" name="xstats" onChange="dolmoedit()"<?php if($stats==1){echo " checked";}?>></td>
-	    <td class="nobr" align="left"><acronym title="<?php echo $text['stats'][1];?>"><?php echo $text['stats'][0];?></acronym></td>
           </tr>
-          <!-- // Team Vergleich ADDON BEGIN --><?php
+          <!-- // Team Vergleich ADDON BEGIN -->
+          <tr>
+            <td class="nobr" align="right"><input type="checkbox" class="lmo-formular-input" name="xstats" onChange="dolmoedit()"<?php if($stats==1){echo " checked";}?>></td>
+            <td class="nobr" align="left"><acronym title="<?php echo $text['stats'][1];?>"><?php echo $text['stats'][0];?></acronym></td>
+          </tr>
+          <!-- // Team Vergleich ADDON END --><?php
     }
     if ($lmtype==1) { ?>
           <tr>

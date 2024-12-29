@@ -5,13 +5,13 @@
 004=Vorige resultaten
 005=Ontmoetingen van
 006=en
-007=Balans tussen
+007=Teamvergelijking Archiv
 008=Speel tegen elkaar
 009=PDF-document
 010=naar het wedstrijdverslag in de LMO (in nieuw venster)
 011=Maakt een PDF-document en geeft het weer
 012=wordt in een nieuw venster geopend
-013=
+013=Balans tussen
 014=
 015=Fout bij het laden van competitie 
 016=Duur van berekeningen en pagina-indeling

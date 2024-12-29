@@ -20,7 +20,7 @@
 //
 
 if (!defined('VERSION'))
-    define('VERSION', '1.6');
+    define('VERSION', '1.6.1');
 if (!defined('ADDON_NAME'))
     define('ADDON_NAME', 'TEAM-Vergleich');
 if (!defined('VERSIONA'))
