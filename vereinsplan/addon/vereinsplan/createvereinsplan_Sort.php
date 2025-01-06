@@ -575,7 +575,7 @@ if ($xx_tmpNr>=0) {
       $LigaTitel=$tvh_Playlist[$key][40];
 
       if ($DatumNeu!="") {
-	//Datumsangabe ist nicht leer, Neue Datumsangaben resetten und neu einlesen
+  //Datumsangabe ist nicht leer, Neue Datumsangaben resetten und neu einlesen
          unset($tmparray);$tmparray=split('[.]', $DatumNeu);
          $JahrNeu=$tmparray[2]; $MonatNeu=$tmparray[1]; $TagNeu=$tmparray[0];
          $WoTagNeu=getNameWoTag($TagesNamen[date("w", mktime(0,0,0,$MonatNeu,$TagNeu,$JahrNeu))],$lmouserlang);
@@ -803,8 +803,8 @@ if ($xx_tmpNr>=0) {
             if ($SpNrH==0) {$DatumMinH = $DatumNeuH;}
             $DatumMaxH = $DatumNeuH;
 
-	   if ($DatumNeuH!=$DatumAltH) {$DatumAltH=$DatumNeuH;$WoTagAltH=$WoTagNeuH;}
-	   else { if ($cfgdatumshow==0) {$DatumNeuH="&nbsp;";$WoTagNeuH="&nbsp;";} }
+     if ($DatumNeuH!=$DatumAltH) {$DatumAltH=$DatumNeuH;$WoTagAltH=$WoTagNeuH;}
+     else { if ($cfgdatumshow==0) {$DatumNeuH="&nbsp;";$WoTagNeuH="&nbsp;";} }
 
             // Tabellenkopf einmalig für statisches Template setzen
             if ($SpNrH==0 && $Slider==0) {
@@ -995,8 +995,8 @@ if ($xx_tmpNr>=0) {
             if ($SpNrA==0) {$DatumMinA = $DatumNeu;}
             $DatumMaxA = $DatumNeu;
 
-       	   if ($DatumNeuA!=$DatumAltA) {$DatumAltA=$DatumNeuA;$WoTagAltA=$WoTagNeuA;}
-	   else { if ($cfgdatumshow==0) {$DatumNeuA="&nbsp;";$WoTagNeuA="&nbsp;";} }
+            if ($DatumNeuA!=$DatumAltA) {$DatumAltA=$DatumNeuA;$WoTagAltA=$WoTagNeuA;}
+     else { if ($cfgdatumshow==0) {$DatumNeuA="&nbsp;";$WoTagNeuA="&nbsp;";} }
 
             // Tabellenkopf einmalig für statisches Template setzen
             if ($SpNrA==0 && $Slider==0) {
@@ -1183,7 +1183,7 @@ if ($xx_tmpNr>=0) {
             $templateA->parseCurrentBlock();
          }  //Ende Auswärtsspiel erstellen
       }     //Ende Datumsangabe NICHT leer
-   }	   //Ende foreach, jedes Spiel
+   }     //Ende foreach, jedes Spiel
 
 
    //allg. Nacharbeiten und dann den Spielplan-Templates zuordnen

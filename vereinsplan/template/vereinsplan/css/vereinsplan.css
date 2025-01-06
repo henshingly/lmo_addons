@@ -1,11 +1,11 @@
 
-  .result *	          {font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 11px;}
-  .result 		  {background-color:#B40000;}
-  .result a 	          {text-decoration: none; color: black;}
+  .result *            {font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 11px;}
+  .result       {background-color:#B40000;}
+  .result a             {text-decoration: none; color: black;}
   .result a:visited        {text-decoration: none; color: black;}
-  .result table 	          {background-color:#c0c0c0; color:black;}
-  .result h1 	          {font-size: 8px; color:black;}
-  .result .vRow 	          {white-space:nowrap; background-color:#FFFFE0; color:black;}
+  .result table             {background-color:#c0c0c0; color:black;}
+  .result h1             {font-size: 8px; color:black;}
+  .result .vRow             {white-space:nowrap; background-color:#FFFFE0; color:black;}
 
   body                     {background-color:#FFFFFF; }
 
@@ -98,7 +98,7 @@
   .infoFL                  { font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT:bold; FONT-SIZE:8pt; background-color:#000066; COLOR:#FFFF99; text-align:center; }
   .infoFR                  { font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT:bold; FONT-SIZE:8pt; background-color:#FF4C00; COLOR:#FFFF99; text-align:center; }
   .fehler                  { font-family:Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT:bold; FONT-SIZE:9pt; background-color:#FF0000; COLOR:#FFFF99; text-align:center; }
-  .infoR a		  {color:blue; }
+  .infoR a      {color:blue; }
   .infoR a:visited         {color:blue; text-decoration:none; }
 
   td.fk1                   { border-style:solid; border-width:1px; border-color:#808080;font-family:Verdana, Arial, Helvetica, sans-serif; FONT-SIZE:7pt; COLOR:#000000; text-align:center; }
@@ -110,14 +110,14 @@
 
   td.seltext               { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center; }
   td.chktext               { width:33%; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:center; }
-  .chktext a		  {color:blue; }
+  .chktext a      {color:blue; }
   .chktext a:visited       {color:blue; text-decoration:none; }
   td.chgview               { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#000000; text-align:left; }
   td.chgview:hover         { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; font-weight:normal; color:#FFFF00; text-align:left; }
   select.sel1              { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: normal; color: #000000; text-align:justify;}
 
   img.slideimg             { width:16px; height:16px; vertical-align:middle;}
-  img			  {border: none;}
+  img        {border: none;}
   a.menu:hover             {font-weight:bold;}
   a                        {color:black; }
   a span.popup,

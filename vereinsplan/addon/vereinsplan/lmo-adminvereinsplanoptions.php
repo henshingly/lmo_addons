@@ -125,7 +125,7 @@ $DefaultCfg_array['vereinsplan_ligasymbol']         = 'tabelle.gif';
 $DefaultCfg_array['vereinsplan_ligakopftext']       = 'Klasse';
 $DefaultCfg_array['vereinsplan_ligalink']           = '1';
 $DefaultCfg_array['vereinsplan_ligatarget']         = '1';
-$DefaultCfg_array['vereinsplan_bericht']    	   = '1';
+$DefaultCfg_array['vereinsplan_bericht']         = '1';
 $DefaultCfg_array['vereinsplan_berichttarget']      = '1';
 $DefaultCfg_array['vereinsplan_berichtsymbol']      = 'lmo-st1.gif';
 $DefaultCfg_array['vereinsplan_berichtkopftext']    = 'Bericht';
@@ -635,7 +635,7 @@ echo getMessage($text[138].$createplan_msg);
                 </tr>
                <?php if (strtolower(substr($save_file_name,-4))==".cfg") { ?>
                 <tr>
-    	         <td class="nobr" colspan="2"><h1><?php echo $text[$MyAddonName][7065]; ?></h1></td>
+               <td class="nobr" colspan="2"><h1><?php echo $text[$MyAddonName][7065]; ?></h1></td>
                 </tr>
                 <tr>
                   <td colspan="2">&nbsp;</td>
@@ -1334,7 +1334,7 @@ if ($vereinsplan_form1 && !$vereinsplan_form2 && !$vereinsplan_form3) {
                   <td align="left">
                     <script type="text/javascript">
                       document.writeln ('<input type=button value="<?php echo $text[$MyAddonName][7055]; ?>" onClick="checkAll(this)"\>');
-    	             document.writeln ('<input type=button value="<?php echo $text[$MyAddonName][7056]; ?>" onClick="uncheckAll(this)"\>');
+                   document.writeln ('<input type=button value="<?php echo $text[$MyAddonName][7056]; ?>" onClick="uncheckAll(this)"\>');
                       document.writeln ('<input type=button value="<?php echo $text[$MyAddonName][7057]; ?>" onClick="switchAll(this)"\>');
                     </script>
                   </td>
@@ -1479,8 +1479,8 @@ if (!$vereinsplan_form3 && $vereinsplan_form2){
                       <script type="text/javascript">
                         document.writeln ('<input type=button value="<?php echo $text[$MyAddonName][7055]; ?>" onClick="checkAll(this)"\>');
                         document.writeln ('<input type=button value="<?php echo $text[$MyAddonName][7056]; ?>" onClick="uncheckAll(this)"\>');
-	               document.writeln ('<input type=button value="<?php echo $text[$MyAddonName][7057]; ?>" onClick="switchAll(this)"\>');
-	             </script>
+                 document.writeln ('<input type=button value="<?php echo $text[$MyAddonName][7057]; ?>" onClick="switchAll(this)"\>');
+               </script>
                     </td>
                   </tr>
               </table>
@@ -1530,8 +1530,8 @@ function cmp ($a1, $a2) {
     return ($a1[$sort]>$a2[$sort]) ? 1 : -1;
   }else{ //Stringvergleich
     $a1[$sort]=strtr($a1[$sort],"¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
-  	$a2[$sort]=strtr($a2[$sort],"¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
-  	return  strnatcasecmp($a1[$sort],$a2[$sort]);
+    $a2[$sort]=strtr($a2[$sort],"¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
+    return  strnatcasecmp($a1[$sort],$a2[$sort]);
   }
 }
 

@@ -24,8 +24,8 @@
   * @author
   * @package vereinsplan
   * @version 1.3.0
-	*
- 	*/
+  *
+   */
 if (!defined('VEREINSPLAN_VERSIONSNUMMER'))  define('VEREINSPLAN_VERSIONSNUMMER','1.3.0');
 
 if (!defined('VEREINSPLAN_VERSION'))  define('VEREINSPLAN_VERSION','[<acronym title="Vereinsplan '.VEREINSPLAN_VERSIONSNUMMER.' &copy; LMO-Group">&copy;</acronym>]');
