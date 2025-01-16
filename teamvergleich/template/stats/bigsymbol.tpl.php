@@ -99,12 +99,12 @@ tr {
       <br>
       <table cellspacing="2" align="center">
         <tr class="vTitle">
-          <td align="center" colspan="3">H&ouml;chste Siege</td>
+          <td align="center" colspan="3"><!--highWin--></td>
         </tr>
         <tr class="vZeilenklasse">
-          <td ><b>Mannschaft</b></td>
-          <td align="center"><b>&nbsp;H&ouml;chster Heimsieg&nbsp;</b></td>
-          <td align="center"><b>&nbsp;H&ouml;chster Ausw&auml;rtssieg</b></td>
+          <td ><b><!--Team--></b></td>
+          <td align="center"><b><!--highHome--></b></td>
+          <td align="center"><b><!--highAway--></b></td>
         </tr>
         <tr class="Zeilenklasse">
           <td><!--Teama--></td>

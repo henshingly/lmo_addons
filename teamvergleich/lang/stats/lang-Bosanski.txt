@@ -35,6 +35,9 @@
 034=Poeni
 035=Datum
 036=Rezultat
+037=Najveća pobeda domaćina
+038=Najveća pobeda gostiju
+039=Najveće pobjede
 060=PREVOD SA
 061=YOUR NAME
 200=Kreiranje .stats fajla za poređenje timova

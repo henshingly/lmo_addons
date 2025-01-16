@@ -35,6 +35,9 @@
 034=Punten
 035=Datum
 036=Resultaat
+037=Hoogste thuisoverwinning
+038=Hoogste uitoverwinning
+039=Hoogste overwinningen
 060=VERTALING VAN
 061=GOOGLE
 200=Aanmaken van een .stats-bestand voor teamvergelijking

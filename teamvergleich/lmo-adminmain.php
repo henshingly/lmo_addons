@@ -24,8 +24,8 @@ function getmicrotime(){
   return ((float)$usec + (float)$sec);
 }
 $startzeit = getmicrotime();
-if ($action=="admin"){
-  $me=array("0","January","February","March","April","May","June","July","August","September","October","November","December");
+if ($action == "admin"){
+  $me=array("0", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
   $adda=$_SERVER['PHP_SELF']."?action=admin&amp;todo=";
   if (!isset($st)){$sty=0;} else {$sty=$st;}
   if (!isset($newpage)){$newpage=0;}
@@ -111,20 +111,12 @@ if ($_SESSION['lmouserok'] == 2) {
   }
   /*Viewer-Addon*/
   /*Stats-Addon*/
-  if (file_exists(PATH_TO_ADDONDIR.'/stats/createstats.php')){
+  if (file_exists(PATH_TO_ADDONDIR.'/stats/lmo-admincreatestats.php')){
     echo "&nbsp;";
-    if (($todo!="stats")){
-      echo "<a href='{$adda}stats' onclick='return chklmolink();' title='{$text['stats'][0]}'>{$text['stats'][0]}</a>";
+    if (($todo!="createstats")){
+      echo "<a href='{$adda}createstats' onclick='return chklmolink();' title='{$text['stats'][0]}'>{$text['stats'][0]}</a>";
     } else {
       echo $text['stats'][0];
-    }
-  }
-  if (file_exists(PATH_TO_ADDONDIR.'/stats/archive.php')){
-    echo "&nbsp;";
-    if (($todo != 'archive')) {
-      echo "<a href='{$adda}archive' onclick='return chklmolink();' title='{$text['stats'][7]}' class='nav-link'>{$text['stats'][7]}</a>";
-    } else {
-      echo $text['stats'][7];
     }
   }
   /*Stats-Addon*/
@@ -184,6 +176,10 @@ if ($_SESSION['lmouserok'] == 2) {
     /*Viewer-Addon*/
     $viewer_addr_optionen = $_SERVER['PHP_SELF']."?action=admin&amp;todo=vieweroptions";
     /*Viewer-Addon*/
+    /*Stats-Addon*/
+    $comparison_stats = $_SERVER['PHP_SELF']."?action=admin&amp;todo=createstats";
+    $comparison_archiv = $_SERVER['PHP_SELF']."?action=admin&amp;todo=createstatsarchiv";
+    /*Stats-Addon*/
     /*PDF-Addon*/
     $pdf_addr_optionen = $_SERVER['PHP_SELF']."?action=admin&amp;todo=pdfoptions";
     /*PDF-Addon*/
@@ -241,20 +237,19 @@ if ($_SESSION['lmouserok'] == 2) {
     }
     /*Tippspiel-Addon*/
     /*Viewer-Addon*/
-    elseif ($todo=="vieweroptions"){
+    elseif ($todo == "vieweroptions"){
       require(PATH_TO_ADDONDIR."/viewer/lmo-adminvieweroptions.php");
     }
     /*Viewer-Addon*/
     /*Stats-Addon*/
-    elseif ($todo=="stats"){
-      require(PATH_TO_ADDONDIR."/stats/createstats.php");
-    }
-    elseif ($todo == 'archive') {
-      require(PATH_TO_ADDONDIR.'/stats/archive.php');
+    elseif ($todo == "createstats"){
+      require(PATH_TO_ADDONDIR."/stats/lmo-admincreatestats.php");
+    } elseif ($todo == "createstatsarchiv") {
+      require(PATH_TO_ADDONDIR."/stats/lmo-admincreatearchiv.php");
     }
     /*Stats-Addon*/
     /*PDF-Addon*/
-    elseif ($todo=="pdfoptions"){
+    elseif ($todo == "pdfoptions"){
       require(PATH_TO_ADDONDIR."/pdf/lmo-adminpdfoptions.inc.php");
     }
     /*PDF-Addon*/
@@ -306,7 +301,7 @@ if ($_SESSION['lmouserok'] == 2) {
     <td align="left">
       <a href="<?php echo URL_TO_LMO."/lmo.php?file=".$file;?>" target="_blank" title="<?php echo $text[116]?>"><?php echo $text[5]?> <?php echo $text[115]?></a>
     </td>
-    <td class="lmoFooter" align="right"><?php echo $text[471].": ".number_format((getmicrotime()-$startzeit),4,".",",")." sek."; ?></td>
+    <td class="lmoFooter" align="right"><?php echo $text[471].": ".number_format((getmicrotime() - $startzeit), 4, ".", ",")." ".$text[592]."."; ?></td>
   </tr>
 </table><?php
 }?>

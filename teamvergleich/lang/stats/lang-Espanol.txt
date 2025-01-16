@@ -35,6 +35,9 @@
 034=Puntos
 035=Fecha
 036=Resultado
+037=Mayor victoria en casa
+038=Mayor victoria fuera de casa
+039=Mayores victorias
 060=TRADUCCIÓN DE
 061=GOOGLE
 200=Creación de un archivo .stats para comparación de equipos

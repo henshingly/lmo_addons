@@ -35,6 +35,9 @@
 034=Body
 035=Datum
 036=Výsledek
+037=Nejvyšší domácí výhra
+038=Nejvyšší výhra venku
+039=Nejvyšší vítězství
 060=PREKLAD Z
 061=Tomáš Brixí
 200=Vytvorení souboru .stats pro týmové srovnání

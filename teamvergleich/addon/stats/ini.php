@@ -20,13 +20,13 @@
 //
 
 if (!defined('VERSION'))
-    define('VERSION', '1.6.1');
+    define('VERSION', '1.6.2');
 if (!defined('ADDON_NAME'))
     define('ADDON_NAME', 'TEAM-Vergleich');
 if (!defined('VERSIONA'))
     define('VERSIONA', 'Copyright © 2004 by <b>HT</b> & <a href=//www.bwlangenberg.de target=_blank>Horten</a>'); //removed URL  because the URL of HT no longer exists
 if (!defined('TEAM_VERGLEICH'))
-    define('TEAM_VERGLEICH', ADDON_NAME . ' <c:alink:https://www.vest-sport.de/forum/viewtopic.php?p=1139#p1139>v.' . VERSION . '</c:alink> Addon for <c:alink:https://www.vest-sport.de/forum/viewtopic.php?t=156>LMO 4.1.4</c:alink>');
+    define('TEAM_VERGLEICH', ADDON_NAME . ' <c:alink:https://www.vest-sport.de/forum/viewtopic.php?p=1211#p1211>v.' . VERSION . '</c:alink> Addon for <c:alink:https://www.vest-sport.de/forum/viewtopic.php?t=156>LMO 4.1.4</c:alink>');
 if (!defined('VERSlON'))
     define('VERSlON', 'Copyright © 2004 by <b>HT</b>'); //removed URL  because the URL of HT no longer exists
 if (!defined('URL'))

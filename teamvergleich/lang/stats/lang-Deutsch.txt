@@ -35,6 +35,9 @@
 034=Pkt
 035=Datum
 036=Ergebnis
+037=Höchster Heimsieg
+038=Höchster Auswärtssieg
+039=Höchste Siege
 060=ÜBERSETZUNG VON
 061=YOUR NAME
 200=Erstellung einer .stats-Datei für den Teamvergleich
@@ -60,9 +63,10 @@
 220=PDF Symbol
 221=Notizsymbol
 222=Spielberichtesymbol
-223=
-224=
+223=Archivauswahl
+224=.stats-Dateien erstellt!
 225=.stats-Datei erstellt!
 226=zurück
 227=.stats Datei erstellen
 228=
+

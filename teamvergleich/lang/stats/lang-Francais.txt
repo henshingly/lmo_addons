@@ -35,6 +35,9 @@
 034=Points
 035=Date
 036=Résultat
+037=Plus haute victoire à domicile
+038=Plus haute victoire à l'extérieur
+039=Victoires les plus élevées
 060=TRADUCTION DE
 061=YOUR NAME
 200=Création d'un fichier .stats pour comparaison d'équipe

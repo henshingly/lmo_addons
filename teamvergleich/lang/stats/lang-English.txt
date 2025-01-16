@@ -35,6 +35,9 @@
 034=Pts
 035=Date
 036=Result
+037=Highest home win
+038=Highest away win
+039=Highest victories
 060=TRANSLATION BY
 061=YOUR NAME
 200=Creation of a .stats file for team comparison

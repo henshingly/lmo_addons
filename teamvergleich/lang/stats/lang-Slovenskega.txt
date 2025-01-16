@@ -35,6 +35,9 @@
 034=Pkt
 035=Datum
 036=Ergebnis
+037=Največja domača zmaga
+038=Največja zmaga v gosteh
+039=Najvišje zmage
 060=ÜBERSETZUNG VON
 061=YOUR NAME
 200=Erstellung einer .stats-Datei für den Teamvergleich

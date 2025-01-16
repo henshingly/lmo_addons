@@ -35,6 +35,9 @@
 034=Pts
 035=Dato
 036=Resultat
+037=Høyeste hjemmeseier
+038=Høyeste borteseier
+039=Høyeste seire
 060=OVERSETTELSE AV
 061=YOUR NAME
 200=Oppretting av en .stats-fil for teamsammenligning

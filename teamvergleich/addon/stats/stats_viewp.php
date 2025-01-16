@@ -114,29 +114,21 @@ for ($i = 1; $i <= 1; $i++) {
     }
 }
 
-$aspiele = 0;
-$asieg = 0;
-$aunentschieden = 0;
-$aniederlage = 0;
-$aspieleh = 0;
-$asiegh = 0;
-$aunentschiedenh = 0;
-$aniederlageh = 0;
-$aspielea = 0;
-$asiega = 0;
-$aunentschiedena = 0;
-$aniederlagea = 0;
-$aptoreh = '';
-$amtoreh = '';
-$aptorea = '';
-$amtoreh = '';
-$amtorea = '';
+$aspiele = $asieg = $aunentschieden = $aniederlage = 0;
+$aspieleh = $asiegh = $aunentschiedenh = $aniederlageh = 0;
+$aspielea = $asiega = $aunentschiedena = $aniederlagea = 0;
+$aptoreh = $amtoreh = $aptorea = $amtorea = 0;
+$Spielm = $multi_cfgarray['spieltageminus'];
+$Spielp = $multi_cfgarray['spieltageplus'];
+
 for ($i = 1; $i <= $anzahl_ligen; $i++) {
     $akt_liga = new liga();
-    if ($akt_liga->loadFile(PATH_TO_LMO . '/' . $dirliga . $fav_liga[$i]) == TRUE) {
+    if ($akt_liga->loadFile(PATH_TO_LMO . '/' . $dirliga . $fav_liga[$i]) == FALSE) {
+        echo "<font color=\"red\">" . $text['stats'][15] . " ($fav_liga[$i])</font>";
+    }
+    else {
         $ligaName = $akt_liga->name;
         foreach ($akt_liga->partien as $partie) {
-            $pdfSpieltag = array();
             if ((@$partie->heim->name == $a) and (@$partie->gast->name == $b)) {
                 $pdfPartie = array($text['stats'][35] => $partie->datumString($leer = '__.__.____'), $text['stats'][31] => $partie->zeitString($leer = '__:__ '), $text['stats'][32] => $partie->heim->name, $text['stats'][33] => $partie->gast->name, $text['stats'][36] => $partie->hToreString() . ' : ' . $partie->gToreString() . ' ' . $partie->spielEndeString($text));
                 //
@@ -152,10 +144,10 @@ for ($i = 1; $i <= $anzahl_ligen; $i++) {
                 if ($partie->hToreString() < $partie->gToreString()) {
                     $aniederlageh = $aniederlageh + 1;
                 }
-                $aptoreh = intval($aptoreh) + intval($partie->hToreString());
-                $amtoreh = intval($amtoreh) + intval($partie->gToreString());
+                $aptoreh = $aptoreh + intval($partie->hToreString());
+                $amtoreh = $amtoreh + intval($partie->gToreString());
             }
-            if ((@$partie->heim->name == $b) and (@$partie->gast->name == $a)) {
+            elseif ((@$partie->heim->name == $b) and (@$partie->gast->name == $a)) {
                 $pdfPartie = array($text['stats'][35] => $partie->datumString($leer = '__.__.____'), $text['stats'][31] => $partie->zeitString($leer = '__:__ '), $text['stats'][32] => $partie->heim->name, $text['stats'][33] => $partie->gast->name, $text['stats'][36] => $partie->hToreString() . ' : ' . $partie->gToreString() . ' ' . $partie->spielEndeString($text));
                 $pdfSpieltag[] = $pdfPartie;
                 if ($partie->hToreString() > $partie->gToreString()) {
@@ -169,18 +161,19 @@ for ($i = 1; $i <= $anzahl_ligen; $i++) {
                 if ($partie->hToreString() < $partie->gToreString()) {
                     $asiega = $asiega + 1;
                 }
-                $aptorea = intval($aptorea) + intval($partie->gToreString());
-                $amtorea = intval($amtorea) + intval($partie->hToreString());
+                $aptorea = $aptorea + intval($partie->gToreString());
+                $amtorea = $amtorea + intval($partie->hToreString());
             }
             // funktioniert momentan noch nicht
             // not working at the moment
             //$pdf->ezTable($pdfSpieltag, '', '', $spTagOptions);
         }
-    } else {
+    /*} else {
         $error = TRUE;
         $message = $text['stats'][15] . ': ' . $file;
-        $ligaName = $message;
+        $ligaName = $message;*/
     }
+    $pdf->ezTable($pdfSpieltag, '', '', $spTagOptions);
 }
 
 if (!$error) {
@@ -214,12 +207,10 @@ if (!$error) {
         $akt_liga = new liga();
         if ($akt_liga->loadFile(PATH_TO_LMO . '/' . $dirliga . $fav_liga[$i]) == TRUE) {
             $ligaName = $akt_liga->name;
-            $Spielm = $multi_cfgarray['spieltageminus'];
-            $Spielp = $multi_cfgarray['spieltageplus'];
             $sptest = $akt_liga->aktuellerSpieltag();
             $aktueller_spieltag = $sptest->nr;
-            $start = $aktueller_spieltag - $Spielm;
-            $ende = $aktueller_spieltag + $Spielp - 1;
+            $start = $aktueller_spieltag - intval($Spielm);
+            $ende = $aktueller_spieltag + intval($Spielp) - 1;
             if ($ende > $akt_liga->spieltageCount()) {
                 $ende = $akt_liga->spieltageCount();
             }

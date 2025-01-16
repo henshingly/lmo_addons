@@ -32,7 +32,7 @@ if ($file != "") {
         <tr>
           <td align="right">
             <acronym title="<?php echo $text[23]." ".$teams[$i]?>">
-            	<?php
+            <?php
     if ($i!=$selteam){?>
             <a href="<?php echo $addp.$i?>" ><?php echo $teamk[$i]?></a>
             <?php
